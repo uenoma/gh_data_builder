@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import BasicInfo from './components/BasicInfo';
-import SpecForm from './components/SpecForm';
-import ArrayForm from './components/ArrayForm';
-import ShootingTypesForm from './components/ShootingTypesForm';
+import DataForm from './components/DataForm';
+import DataViewer from './components/DataViewer';
 
 function App() {
+  const [view, setView] = useState('input');
   const [data, setData] = useState({
     data_id: '',
     ms_number: '',
@@ -26,15 +25,29 @@ function App() {
       thrusters: [],
       grapple_types: [],
       shooting_types: [],
-      recive_types: [],
-      avoidance: {},
-      defence: {},
-      body_part: {},
+      weapon_specs: [],
+      avoidance: {
+        front: { values: ['', '', '', '', '', ''] },
+        side: { values: ['', '', '', '', '', ''] },
+        back: { values: ['', '', '', '', '', ''] }
+      },
+      defence: {
+        same_same: ['', '', '', ''],
+        same_different: ['', '', '', ''],
+        different_same: ['', '', '', ''],
+        different_different: ['', '', '', '']
+      },
+      body_part: {
+        front: ['', '', '', '', '', '', '', '', '', '', ''],
+        right: ['', '', '', '', '', '', '', '', '', '', ''],
+        left: ['', '', '', '', '', '', '', '', '', '', ''],
+        back: ['', '', '', '', '', '', '', '', '', '', '']
+      },
       body_specs: {
-        head: {},
-        leg: {},
-        body: {},
-        arm: {}
+        head: [],
+        leg: [],
+        body: [],
+        arm: []
       }
     }
   });
@@ -85,6 +98,19 @@ function App() {
     }));
   };
 
+  const handleUpdate = (section, key, subKey, value) => {
+    setData(prev => ({
+      ...prev,
+      ms_data: {
+        ...prev.ms_data,
+        [section]: {
+          ...prev.ms_data[section],
+          [key]: subKey ? { ...prev.ms_data[section][key], [subKey]: value } : value
+        }
+      }
+    }));
+  };
+
   const downloadJSON = () => {
     const dataStr = JSON.stringify(data, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
@@ -98,41 +124,23 @@ function App() {
   return (
     <div className="App">
       <h1>GH Data Builder</h1>
-      <form>
-        <BasicInfo data={data} onChange={handleBasicChange} />
-        <SpecForm spec={data.ms_data.spec} onChange={handleSpecChange} />
-        <ArrayForm
-          title="Receive Types"
-          items={data.ms_data.receive_types}
-          fields={['nama', 'value']}
-          onAdd={() => addItem('receive_types')}
-          onUpdate={(index, field, value) => updateItem('receive_types', index, field, value)}
-          onRemove={(index) => removeItem('receive_types', index)}
+      <div>
+        <button onClick={() => setView('input')}>データ入力</button>
+        <button onClick={() => setView('viewer')}>データ閲覧</button>
+      </div>
+      {view === 'input' && (
+        <DataForm
+          data={data}
+          onBasicChange={handleBasicChange}
+          onSpecChange={handleSpecChange}
+          onAddItem={addItem}
+          onUpdateItem={updateItem}
+          onRemoveItem={removeItem}
+          onUpdate={handleUpdate}
         />
-        <ArrayForm
-          title="Thrusters"
-          items={data.ms_data.thrusters}
-          fields={['name', 'value', 'direction', 'fuel']}
-          onAdd={() => addItem('thrusters')}
-          onUpdate={(index, field, value) => updateItem('thrusters', index, field, value)}
-          onRemove={(index) => removeItem('thrusters', index)}
-        />
-        <ArrayForm
-          title="Grapple Types"
-          items={data.ms_data.grapple_types}
-          fields={['name', 'value', 'power', 'destructive_power']}
-          onAdd={() => addItem('grapple_types')}
-          onUpdate={(index, field, value) => updateItem('grapple_types', index, field, value)}
-          onRemove={(index) => removeItem('grapple_types', index)}
-        />
-        <ShootingTypesForm
-          shootingTypes={data.ms_data.shooting_types}
-          onAdd={() => addItem('shooting_types')}
-          onUpdate={(index, field, value) => updateItem('shooting_types', index, field, value)}
-          onRemove={(index) => removeItem('shooting_types', index)}
-        />
-      </form>
-      <button onClick={downloadJSON}>Download JSON</button>
+      )}
+      {view === 'viewer' && <DataViewer data={data} />}
+      <button onClick={downloadJSON}>JSONダウンロード</button>
     </div>
   );
 }
