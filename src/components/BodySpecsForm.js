@@ -42,14 +42,15 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
     head: labels.head,
     leg: labels.leg,
     body: labels.body,
-    arm: labels.arm
+    arm: labels.arm,
+    backpack: labels.backpack
   };
 
   return (
     <div>
-      {bodySpecs && ['head', 'leg', 'body', 'arm'].map(part => (
+      {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
         <div key={part} className="body-specs-part">
-          <h3>{partLabels[part]}</h3>
+          {/* <h3>{partLabels[part]}</h3> */}
           <table className="body-specs-table">
             <thead>
               <tr>
@@ -61,7 +62,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                       onClick={() => removeItem(part, index)}
                       className="body-specs-remove-button"
                     >
-                      ×
+                      削除
                     </button>
                   </th>
                 ))}

@@ -40,12 +40,17 @@ const ThrustersForm = ({ items, onAdd, onUpdate, onRemove }) => {
                 />
               </td>
               <td>
-                <input
-                  type="text"
+                <select
                   value={item.direction || ''}
                   onChange={(e) => handleUpdate(index, 'direction', e.target.value)}
-                  className="thruster-direction-input"
-                />
+                  className="thruster-direction-select"
+                >
+                  <option value=""></option>
+                  <option value="F">F</option>
+                  <option value="B">B</option>
+                  <option value="A">A</option>
+                  <option value="T">T</option>
+                </select>
               </td>
               <td>
                 <input

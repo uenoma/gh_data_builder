@@ -50,6 +50,7 @@ const labels = {
   leg: '脚',
   body: '胴体',
   arm: '腕',
+  backpack: 'バックパック',
   item: '項目',
 
   // Common
@@ -76,7 +77,7 @@ const labels = {
   field: 'フィールド',
   value: '値',
   thruster: '推力種類',
-  action: 'アクション',
+  action: '操作',
   thrusterType: '推力種類',
   thrust: '推力',
   receiveType: '受け方法',

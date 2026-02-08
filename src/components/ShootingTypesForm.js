@@ -29,7 +29,7 @@ const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className
             <th>{labels.totalCount}</th>
             <th>{labels.totalCountTimes}</th>
             <th>{labels.shootingDirection}</th>
-            <th>削除</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
@@ -106,7 +106,7 @@ const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className
                     onClick={() => onRemove(index)}
                     className="body-specs-remove-button"
                   >
-                    ×
+                    削除
                   </button>
                 </td>
               </tr>
