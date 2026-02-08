@@ -51,8 +51,8 @@ const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className
                       type="number" 
                       value={item.hit_rates ? item.hit_rates[i] || '' : ''} 
                       onChange={(e) => {
-                        const newHitRates = [...(item.hit_rates || Array(10).fill(0))];
-                        newHitRates[i] = Number(e.target.value) || 0;
+                        const newHitRates = [...(item.hit_rates || Array(10).fill(null))];
+                        newHitRates[i] = e.target.value === '' ? null : Number(e.target.value);
                         handleUpdate(index, 'hit_rates', newHitRates);
                       }}
                       className="hit-power-input"
@@ -118,8 +118,8 @@ const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className
                       type="number" 
                       value={item.power ? item.power[i] || '' : ''} 
                       onChange={(e) => {
-                        const newPower = [...(item.power || Array(10).fill(0))];
-                        newPower[i] = Number(e.target.value) || 0;
+                        const newPower = [...(item.power || Array(10).fill(null))];
+                        newPower[i] = e.target.value === '' ? null : Number(e.target.value);
                         handleUpdate(index, 'power', newPower);
                       }}
                       className="hit-power-input"

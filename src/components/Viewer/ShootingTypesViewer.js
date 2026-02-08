@@ -45,7 +45,7 @@ const ShootingTypesViewer = ({ items }) => {
               {Array.from({ length: 10 }, (_, i) => (
                 <td key={`hit-${index}-${i}`}>
                   {item.hit_rates &&
-                    (item.hit_rates[i] === 0 ? 0 : (item.hit_rates[i] ?? "-"))}
+                    (item.hit_rates[i] === 0 ? 0 : (item.hit_rates[i] !== null ? item.hit_rates[i] : "-"))}
                 </td>
               ))}
               <td>
