@@ -67,3 +67,7 @@
 .shooting-name-column {
   width: 200px;
 }
+
+.hit-last-row {
+  border-bottom: 3px double #444;
+}
