@@ -1,0 +1,44 @@
+.defence-viewer-section {
+  background-color: #86a787;
+}
+
+.defence-viewer-section h2 {
+  margin-top: 0;
+}
+
+.defence-viewer-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.defence-viewer-table th,
+.defence-viewer-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: black;
+  background-color: #86a787;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.defence-table th {
+  background-color: #0d7377;
+  font-weight: bold;
+}
+
+.defence-table {
+  width: 200px;
+}
+
+.defence-table th,
+.defence-table td {
+  width: 40px;
+}
+
+.defence-table th:first-child,
+.defence-table td:first-child {
+  width: 70px;
+  font-weight: bold;
+}
+

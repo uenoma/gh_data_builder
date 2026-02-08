@@ -15,7 +15,7 @@ const labels = {
   minStraight: '最小直進距離',
   size: '寸法修正値',
   stallSpeed: '失速速度',
-  ppLimit: 'パイロットポイント限界',
+  ppLimit: 'PP限界',
   defModifier: '防御修正値',
   walkSpeed: '歩行速度',
 

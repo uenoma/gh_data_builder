@@ -33,6 +33,10 @@
   color: #e0e0e0;
 }
 
+.thrusters-table td:first-child {
+  min-width: 150px;
+}
+
 .thrusters-table input,
 .thrusters-table select {
   width: 60px;

@@ -1,0 +1,26 @@
+.basic-info-viewer-section {
+  background-color: #86a787;
+}
+
+.basic-info-viewer-section h2 {
+  margin-top: 0;
+}
+
+.viewer-basic-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.viewer-basic-info-table td {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.data-id-cell {
+  text-align: right;
+}
+
+.ms-name-cell {
+  text-align: left;
+}

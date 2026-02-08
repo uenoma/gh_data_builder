@@ -1,11 +1,11 @@
 import React from 'react';
 import labels from '../../labels';
+import './ReceiveTypesViewer.css';
 
 const ReceiveTypesViewer = ({ items }) => {
   return (
-    <div className="viewer-section">
-      <h2>{labels.receiveTypes}</h2>
-      <table className="viewer-table">
+    <div className="receive-types-viewer-section">
+      <table className="receive-types-viewer-table">
         <thead>
           <tr>
             <th>{labels.receiveMethod}</th>

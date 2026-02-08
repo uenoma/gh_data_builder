@@ -1,9 +1,11 @@
 import React from 'react';
 import labels from '../../labels';
+import './WeaponSpecsViewer.css';
 
 const WeaponSpecsViewer = ({ items }) => {
   return (
-    <table className="viewer-table">
+    <div className="weapon-specs-viewer-section">
+      <table className="weapon-specs-viewer-table">
       <thead>
         <tr>
           <th>{labels.weaponName}</th>
@@ -23,6 +25,7 @@ const WeaponSpecsViewer = ({ items }) => {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };
 

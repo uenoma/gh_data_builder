@@ -1,11 +1,11 @@
 import React from 'react';
 import labels from '../../labels';
+import './DefenceViewer.css';
 
 const DefenceViewer = ({ defence }) => {
   return (
-    <div className="viewer-section">
-      <h2>{labels.defence}</h2>
-      <table className="viewer-table">
+    <div className="defence-viewer-section">
+      <table className="defence-viewer-table defence-table">
         <thead>
           <tr>
             <th></th>

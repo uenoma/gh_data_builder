@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../../labels';
+import './BodySpecsViewer.css';
 
 const BodySpecsViewer = ({ bodySpecs }) => {
   const partLabels = {
@@ -11,12 +12,12 @@ const BodySpecsViewer = ({ bodySpecs }) => {
   };
 
   return (
-    <div className="viewer-section">
-      <h2>{labels.bodySpecs}</h2>
-      {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
-        bodySpecs[part] && bodySpecs[part].length > 0 ? (
-        <div key={part} className="body-specs-part">
-          <table className="viewer-table">
+    <div className="body-specs-viewer-section">
+      <div className="viewer-row">
+        {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
+          bodySpecs[part] && bodySpecs[part].length > 0 ? (
+          <div key={part} className="body-specs-part">
+            <table className="body-specs-viewer-table">
             <thead>
               <tr>
                 <th>{partLabels[part]}</th>
@@ -29,25 +30,25 @@ const BodySpecsViewer = ({ bodySpecs }) => {
               <tr>
                 <td>{labels.front}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[0]}</td>
+                  <td key={index}>{item.values && item.values[0] !== null ? item.values[0] : '-'}</td>
                 ))}
               </tr>
               <tr>
                 <td>{labels.right}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[1]}</td>
+                  <td key={index}>{item.values && item.values[1] !== null ? item.values[1] : '-'}</td>
                 ))}
               </tr>
               <tr>
                 <td>{labels.left}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[2]}</td>
+                  <td key={index}>{item.values && item.values[2] !== null ? item.values[2] : '-'}</td>
                 ))}
               </tr>
               <tr className="back-row">
                 <td>{labels.back}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[3]}</td>
+                  <td key={index}>{item.values && item.values[3] !== null ? item.values[3] : '-'}</td>
                 ))}
               </tr>
               <tr>
@@ -70,9 +71,10 @@ const BodySpecsViewer = ({ bodySpecs }) => {
               </tr>
             </tbody>
           </table>
-        </div>
-        ) : null
-      ))}
+          </div>
+          ) : null
+        ))}
+      </div>
     </div>
   );
 };

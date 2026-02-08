@@ -115,7 +115,7 @@ function App() {
   const downloadJSON = () => {
     const dataStr = JSON.stringify(data, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    const exportFileDefaultName = 'gh_data.json';
+    const exportFileDefaultName = data.data_id ? `${data.data_id}.json` : 'gh_data.json';
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);

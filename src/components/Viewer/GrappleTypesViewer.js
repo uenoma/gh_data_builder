@@ -1,11 +1,11 @@
 import React from 'react';
 import labels from '../../labels';
+import './GrappleTypesViewer.css';
 
 const GrappleTypesViewer = ({ items }) => {
   return (
-    <div className="viewer-section">
-      <h2>{labels.grappleTypes}</h2>
-      <table className="viewer-table">
+    <div className="grapple-viewer-section">
+      <table className="grapple-viewer-table viewer-grapple-types-table">
         <thead>
           <tr>
             <th>{labels.grappleMethod}</th>

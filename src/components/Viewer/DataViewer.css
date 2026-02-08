@@ -1,26 +1,21 @@
 .data-viewer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 10px;
+  padding: 20px 20px 0px 20px;
+  color: black;
+  background-color: #86a787;
+  width: 1500px;
 }
 
 .viewer-section {
-  margin-bottom: 30px;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #2a2a2a;
+  background-color: #86a787;
 }
 
 .viewer-section h2 {
   margin-top: 0;
-  color: #e0e0e0;
 }
 
 .viewer-table {
-  width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
   table-layout: fixed;
 }
 
@@ -29,45 +24,68 @@
   border: 1px solid #444;
   padding: 6px;
   text-align: center;
-  color: #e0e0e0;
-  background-color: #2a2a2a;
-  font-size: 12px;
+  color: black;
+  background-color: #86a787;
+  font-size: 10px;
+  white-space: nowrap;
 }
 
 .viewer-table thead th {
   background-color: #0d7377;
-  color: #e0e0e0;
   font-weight: bold;
 }
 
 .viewer-table tbody th {
-  background-color: #333;
   font-weight: bold;
   text-align: left;
-  color: #e0e0e0;
+}
+
+.viewer-table tbody {
+  color: black;
+  background-color: #86a787;
 }
 
 .dcp-circle {
   border-radius: 50%;
-  background-color: white;
-  border: 2px solid black;
-  width: 12px;
-  height: 12px;
+  border: 3px solid black;
+  width: 4px;
+  height: 4px;
   display: block;
-  margin: 0 auto;
+  margin: 2px auto 2px auto;
   color: black;
-  font-size: 12px;
+  font-size: 8px;
   text-align: center;
-  line-height: 12px;
-}
-.back-row {
-  border-bottom: 3px double #444;
+  line-height: 4px;
 }
 
-.shooting-name-column {
-  width: 200px;
+.viewer-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
 }
 
-.hit-last-row {
-  border-bottom: 3px double #444;
+.viewer-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.viewer-spacer10 {
+  width: 10px;
+}
+.viewer-spacer50 {
+  width: 50px;
+}
+.viewer-spacer100 {
+  width: 100px;
+}
+
+.avoidance-defence-column {
+  width: 300px;
+}
+
+.grapple-thrusters-row .viewer-section {
+  min-width: 250px;
 }

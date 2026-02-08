@@ -1,0 +1,33 @@
+.body-part-viewer-section {
+  background-color: #86a787;
+}
+
+.body-part-viewer-section h2 {
+  margin-top: 0;
+}
+
+.body-part-viewer-table {
+  border-collapse: collapse;
+  width: 500px;
+}
+
+.body-part-viewer-table th,
+.body-part-viewer-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: black;
+  background-color: #86a787;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.body-part-viewer-table th {
+  background-color: #0d7377;
+  font-weight: bold;
+}
+
+.body-part-table th:first-child,
+.body-part-table td:first-child {
+  width: 40px;
+}

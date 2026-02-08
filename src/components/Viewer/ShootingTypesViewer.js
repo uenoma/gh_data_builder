@@ -1,11 +1,11 @@
 import React from "react";
 import labels from "../../labels";
+import "./ShootingTypesViewer.css";
 
 const ShootingTypesViewer = ({ items }) => {
   return (
     <div className="viewer-section">
-      <h3>{labels.shootingAndWeapons}</h3>
-      <table className="viewer-table">
+      <table className="viewer-table shooting-types-table">
         <thead>
           <tr>
             <th colSpan="2" className="shooting-name-column">

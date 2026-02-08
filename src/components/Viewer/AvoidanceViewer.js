@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../../labels';
+import './AvoidanceViewer.css';
 
 const AvoidanceViewer = ({ avoidance }) => {
   const directionLabels = {
@@ -12,7 +13,6 @@ const AvoidanceViewer = ({ avoidance }) => {
 
   return (
     <div className="viewer-section">
-      <h2>{labels.avoidance}</h2>
       <table className="viewer-table">
         <thead>
           <tr>

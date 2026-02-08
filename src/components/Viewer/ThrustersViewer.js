@@ -1,11 +1,11 @@
 import React from 'react';
 import labels from '../../labels';
+import './ThrustersViewer.css';
 
 const ThrustersViewer = ({ items }) => {
   return (
-    <div className="viewer-section">
-      <h2>{labels.thrusters}</h2>
-      <table className="viewer-table">
+    <div className="thrusters-viewer-section">
+      <table className="thrusters-viewer-table viewer-thrusters-table">
         <thead>
           <tr>
             <th>{labels.thrusterType}</th>

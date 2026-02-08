@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../../labels';
+import './BodyPartViewer.css';
 
 const BodyPartViewer = ({ bodyPart }) => {
   const directionLabels = {
@@ -12,9 +13,8 @@ const BodyPartViewer = ({ bodyPart }) => {
   const positionLabels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
   return (
-    <div className="viewer-section">
-      <h2>{labels.bodyPart}</h2>
-      <table className="viewer-table">
+    <div className="body-part-viewer-section">
+      <table className="body-part-viewer-table body-part-table">
         <thead>
           <tr>
             <th></th>

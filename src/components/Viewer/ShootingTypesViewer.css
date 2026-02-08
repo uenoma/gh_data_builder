@@ -1,0 +1,15 @@
+.shooting-types-table {
+  width: 900px;
+}
+
+.shooting-types-table th:not(.shooting-name-column) {
+  width: 30px;
+}
+
+.shooting-name-column {
+  width: 150px;
+}
+
+.hit-last-row {
+  border-bottom: 3px double #444;
+}

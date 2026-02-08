@@ -1,27 +1,15 @@
 import React from 'react';
 import labels from '../../labels';
+import './BasicInfoViewer.css';
 
 const BasicInfoViewer = ({ data }) => {
   return (
-    <div className="viewer-section">
-      <h2>{labels.basicInfo}</h2>
-      <table className="viewer-table">
+    <div className="basic-info-viewer-section">
+      <table className="viewer-basic-info-table">
         <tbody>
           <tr>
-            <td>{labels.dataId}</td>
-            <td>{data.data_id}</td>
-          </tr>
-          <tr>
-            <td>{labels.msNumber}</td>
-            <td>{data.ms_number}</td>
-          </tr>
-          <tr>
-            <td>{labels.msName}</td>
-            <td>{data.ms_name}</td>
-          </tr>
-          <tr>
-            <td>{labels.msIcon}</td>
-            <td>{data.ms_icon}</td>
+            <td className="ms-name-cell">{data.ms_number} {data.ms_name}</td>
+            <td className="data-id-cell">[ {data.data_id} ]</td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,28 @@
+.weapon-specs-viewer-section {
+  background-color: #86a787;
+}
+
+.weapon-specs-viewer-section h2 {
+  margin-top: 0;
+}
+
+.weapon-specs-viewer-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.weapon-specs-viewer-table th,
+.weapon-specs-viewer-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: black;
+  background-color: #86a787;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.weapon-specs-viewer-table th {
+  background-color: #0d7377;
+  font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../../labels';
+import './SpecViewer.css';
 
 const SpecViewer = ({ spec }) => {
   const fieldLabels = {
@@ -20,9 +21,8 @@ const SpecViewer = ({ spec }) => {
   ];
 
   return (
-    <div className="viewer-section">
-      <h2>{labels.spec}</h2>
-      <table className="viewer-table">
+    <div className="spec-viewer-section">
+      <table className="spec-viewer-table spec-table">
         <tbody>
           {fields.map((row, rowIndex) => (
             <tr key={rowIndex}>
