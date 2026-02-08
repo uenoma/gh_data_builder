@@ -63,3 +63,7 @@
 .back-row {
   border-bottom: 3px double #444;
 }
+
+.shooting-name-column {
+  width: 200px;
+}
