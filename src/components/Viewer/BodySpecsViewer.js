@@ -1,6 +1,5 @@
 import React from 'react';
 import labels from '../../labels';
-import './BodySpecsViewer.css';
 
 const BodySpecsViewer = ({ bodySpecs }) => {
   const partLabels = {
@@ -12,12 +11,12 @@ const BodySpecsViewer = ({ bodySpecs }) => {
   };
 
   return (
-    <div className="body-specs-viewer-section">
+    <div className="viewer-section">
       <div className="viewer-row">
         {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
           bodySpecs[part] && bodySpecs[part].length > 0 ? (
           <div key={part} className="body-specs-part">
-            <table className="body-specs-viewer-table">
+            <table className="viewer-table">
             <thead>
               <tr>
                 <th>{partLabels[part]}</th>
@@ -54,19 +53,21 @@ const BodySpecsViewer = ({ bodySpecs }) => {
               <tr>
                 <td>{labels.armor}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.armor}</td>
+                  <td key={index}>{item.armor !== null ? item.armor : '-'}</td>
                 ))}
               </tr>
               <tr>
                 <td>{labels.dcp}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index} className={item.part_explosion ? 'dcp-circle' : ''}>{item.dcp || '-'}</td>
+                  <td key={index}>
+                    <div className={item.part_explosion ? 'dcp-circle' : ''}>{item.dcp !== null ? item.dcp : '-'}</div>
+                  </td>
                 ))}
               </tr>
               <tr>
                 <td>{labels.hp}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{part === 'body' && item.body ? `(${item.hp})` : item.hp}</td>
+                  <td key={index}>{part === 'body' && item.body ? `(${item.hp})` : item.hp !== null ? item.hp : '-'}</td>
                 ))}
               </tr>
             </tbody>
