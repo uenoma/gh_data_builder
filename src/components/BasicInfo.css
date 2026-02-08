@@ -1,15 +1,11 @@
-.narrow-input {
-  width: 80px;
-}
-
-.spec-form-table {
+.basic-info-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.spec-form-table th,
-.spec-form-table td {
+.basic-info-table th,
+.basic-info-table td {
   border: 1px solid #444;
   padding: 6px;
   text-align: center;
@@ -18,21 +14,21 @@
   font-size: 12px;
 }
 
-.spec-form-table thead th {
+.basic-info-table thead th {
   background-color: #0d7377;
   color: #e0e0e0;
   font-weight: bold;
 }
 
-.spec-form-table tbody th {
+.basic-info-table tbody th {
   background-color: #333;
   font-weight: bold;
   text-align: left;
   color: #e0e0e0;
 }
 
-.spec-form-table input {
-  width: 60px;
+.basic-info-table input {
+  width: 100px;
   padding: 4px;
   text-align: center;
   border: 1px solid #555;
@@ -41,12 +37,8 @@
   color: #e0e0e0;
 }
 
-.spec-form-table input:focus {
+.basic-info-table input:focus {
   outline: none;
   border-color: #0d7377;
   background-color: #2a2a2a;
-}
-
-td {
-  white-space: nowrap;
 }

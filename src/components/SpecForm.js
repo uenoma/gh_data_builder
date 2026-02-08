@@ -27,7 +27,7 @@ const SpecForm = ({ spec, onChange }) => {
   return (
     <div>
       <h2>{labels.spec}</h2>
-      <table>
+      <table className="spec-form-table">
         <tbody>
           {fields.map((row, rowIndex) => (
             <tr key={rowIndex}>

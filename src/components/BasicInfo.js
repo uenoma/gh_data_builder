@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../labels';
+import './BasicInfo.css';
 
 const BasicInfo = ({ data, onChange }) => {
   const handleChange = (e) => {
@@ -9,7 +10,7 @@ const BasicInfo = ({ data, onChange }) => {
   return (
     <div>
       <h2>{labels.basicInfo}</h2>
-      <table>
+      <table className="basic-info-table">
         <tbody>
           <tr>
             <td>{labels.dataId}</td>
