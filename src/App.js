@@ -114,7 +114,18 @@ function App() {
   };
 
   const downloadJSON = () => {
-    const dataStr = JSON.stringify(data, null, 2);
+    const processedData = {
+      ...data,
+      ms_data: {
+        ...data.ms_data,
+        shooting_types: data.ms_data.shooting_types.map(item => ({
+          ...item,
+          hit_rates: item.hit_rates ? item.hit_rates.map(rate => rate !== null ? String(rate) : null) : [],
+          power: item.power ? item.power.map(p => p !== null ? String(p) : null) : []
+        }))
+      }
+    };
+    const dataStr = JSON.stringify(processedData, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
     const exportFileDefaultName = data.data_id ? `${data.data_id}.json` : 'gh_data.json';
     const linkElement = document.createElement('a');
