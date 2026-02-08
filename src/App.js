@@ -141,7 +141,7 @@ function App() {
         />
       )}
       {view === 'viewer' && <DataViewer data={data} />}
-      <button onClick={downloadJSON}>JSONダウンロード</button>
+      <button onClick={downloadJSON} className="download-button">JSONダウンロード</button>
     </div>
   );
 }

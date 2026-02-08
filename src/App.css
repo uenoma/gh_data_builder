@@ -199,6 +199,10 @@ button:active {
   background-color: #0a5f5c;
 }
 
+.download-button {
+  margin-bottom: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #e0e0e0;
 }

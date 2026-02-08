@@ -45,24 +45,12 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
     arm: labels.arm
   };
 
-  const rowLabels = [
-    labels.name,
-    labels.front,
-    labels.right,
-    labels.left,
-    labels.back,
-    labels.armor,
-    labels.dcp,
-    labels.partExplosion,
-    labels.hp
-  ];
-
   return (
     <div>
       {bodySpecs && ['head', 'leg', 'body', 'arm'].map(part => (
         <div key={part} className="body-specs-part">
           <h3>{partLabels[part]}</h3>
-          <table className="data-table">
+          <table className="body-specs-table">
             <thead>
               <tr>
                 <th>{partLabels[part]}</th>

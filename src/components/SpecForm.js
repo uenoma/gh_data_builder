@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../labels';
+import './SpecForm.css';
 
 const SpecForm = ({ spec, onChange }) => {
   const handleChange = (e) => {
@@ -17,14 +18,30 @@ const SpecForm = ({ spec, onChange }) => {
     walk_speed: labels.walkSpeed
   };
 
+  const fields = [
+    ['sensor_rank', 'motion_thrust', 'min_straight'],
+    ['size', 'stall_speed', 'pp_limit'],
+    ['def_modifier', 'walk_speed']
+  ];
+
   return (
     <div>
       <h2>{labels.spec}</h2>
-      {Object.keys(spec).map(key => (
-        <div key={key}>
-          <label>{fieldLabels[key] || key}: <input type="text" name={key} value={spec[key]} onChange={handleChange} /></label>
-        </div>
-      ))}
+      <table>
+        <tbody>
+          {fields.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map(field => (
+                <React.Fragment key={field}>
+                  <td>{fieldLabels[field] || field}</td>
+                  <td><input type="text" name={field} value={spec[field]} onChange={handleChange} className="narrow-input" /></td>
+                </React.Fragment>
+              ))}
+              {row.length < 3 && <td colSpan={2}></td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

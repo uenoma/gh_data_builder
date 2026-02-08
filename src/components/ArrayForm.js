@@ -21,7 +21,7 @@ const ArrayForm = ({ title, items, fields, onAdd, onUpdate, onRemove }) => {
   };
 
   return (
-    <div>
+    <div className="array-form">
       <h2>{title}</h2>
       {items.map((item, index) => (
         <div key={index} className="array-form-item">

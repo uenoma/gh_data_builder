@@ -2,6 +2,59 @@
   margin-bottom: 30px;
 }
 
+.body-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.body-specs-table th,
+.body-specs-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+  font-size: 12px;
+}
+
+.body-specs-table thead th {
+  background-color: #0d7377;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.body-specs-table tbody th {
+  background-color: #333;
+  font-weight: bold;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+.body-specs-table input {
+  width: 60px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.body-specs-table input:focus {
+  outline: none;
+  border-color: #0d7377;
+  background-color: #2a2a2a;
+}
+
+.body-specs-table td {
+  text-align: left;
+}
+
+.body-specs-table th {
+  text-align: left;
+}
+
 .body-specs-remove-button {
   margin-left: 5px;
   font-size: 0.8em;
@@ -31,6 +84,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  justify-content: flex-start;
 }
 
 .body-specs-add-button {

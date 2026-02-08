@@ -1,0 +1,54 @@
+.grapple-types-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grapple-types-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.grapple-types-table th,
+.grapple-types-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+  font-size: 12px;
+}
+
+.grapple-types-table thead th {
+  background-color: #0d7377;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.grapple-types-table tbody th {
+  background-color: #333;
+  font-weight: bold;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+.grapple-types-table input {
+  width: 60px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.grapple-types-table input:focus {
+  outline: none;
+  border-color: #0d7377;
+  background-color: #2a2a2a;
+}
+
+.grapple-type-add-button {
+  margin-top: 10px;
+}

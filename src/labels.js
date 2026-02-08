@@ -72,7 +72,21 @@ const labels = {
   dcp: 'DCP',
   hp: '耐久力',
   partExplosion: '部分爆発',
-  bodyFlag: '胴体と耐久値共有'
+  bodyFlag: '胴体と耐久値共有',
+  field: 'フィールド',
+  value: '値',
+  thruster: '推力種類',
+  action: 'アクション',
+  thrusterType: '推力種類',
+  thrust: '推力',
+  receiveType: '受け方法',
+  grappleType: '格闘方法',
+  receiveMethod: '受け方法',
+  receiveRate: '受け率',
+  grappleMethod: '格闘方法',
+  hitRate: '命中率',
+  weaponSpec: '武装',
+  weaponName: '武装'
 };
 
 export default labels;

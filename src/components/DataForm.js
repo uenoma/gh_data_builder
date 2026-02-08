@@ -1,6 +1,10 @@
 import React from 'react';
 import BasicInfo from './BasicInfo';
 import SpecForm from './SpecForm';
+import ThrustersForm from './ThrustersForm';
+import ReceiveTypesForm from './ReceiveTypesForm';
+import GrappleTypesForm from './GrappleTypesForm';
+import WeaponSpecsForm from './WeaponSpecsForm';
 import ArrayForm from './ArrayForm';
 import ShootingTypesForm from './ShootingTypesForm';
 import AvoidanceForm from './AvoidanceForm';
@@ -22,34 +26,27 @@ const DataForm = ({
   return (
     <form className="data-form">
       <div className="form-section">
-        <div className="form-row">
+        <div className="form-columns">
           <BasicInfo data={data} onChange={onBasicChange} />
           <SpecForm spec={data.ms_data.spec} onChange={onSpecChange} />
-        </div>
-      </div>
-      <div className="form-section">
-        <h3>{labels.typesAndSpecs}</h3>
-        <div className="form-grid">
-          <ArrayForm
-            title={labels.thrusters}
+          <ThrustersForm
             items={data.ms_data.thrusters}
-            fields={['name', 'value', 'direction', 'fuel']}
             onAdd={() => onAddItem('thrusters')}
             onUpdate={(index, field, value) => onUpdateItem('thrusters', index, field, value)}
             onRemove={(index) => onRemoveItem('thrusters', index)}
           />
-          <ArrayForm
-            title={labels.receiveTypes}
+        </div>
+      </div>
+      <div className="form-section">
+        <div className="form-grid">
+          <ReceiveTypesForm
             items={data.ms_data.receive_types}
-            fields={['nama', 'value']}
             onAdd={() => onAddItem('receive_types')}
             onUpdate={(index, field, value) => onUpdateItem('receive_types', index, field, value)}
             onRemove={(index) => onRemoveItem('receive_types', index)}
           />
-          <ArrayForm
-            title={labels.grappleTypes}
+          <GrappleTypesForm
             items={data.ms_data.grapple_types}
-            fields={['name', 'value', 'power', 'destructive_power']}
             onAdd={() => onAddItem('grapple_types')}
             onUpdate={(index, field, value) => onUpdateItem('grapple_types', index, field, value)}
             onRemove={(index) => onRemoveItem('grapple_types', index)}
@@ -65,10 +62,8 @@ const DataForm = ({
           onRemove={(index) => onRemoveItem('shooting_types', index)}
           className="shooting-weapon-spacing"
         />
-        <ArrayForm
-          title={labels.weaponSpecs}
+        <WeaponSpecsForm
           items={data.ms_data.weapon_specs}
-          fields={['name', 'armor', 'dcp', 'hp']}
           onAdd={() => onAddItem('weapon_specs')}
           onUpdate={(index, field, value) => onUpdateItem('weapon_specs', index, field, value)}
           onRemove={(index) => onRemoveItem('weapon_specs', index)}

@@ -1,3 +1,9 @@
+.array-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .array-form-item {
   display: flex;
   align-items: center;
