@@ -22,3 +22,7 @@
   font-size: 10px;
   white-space: nowrap;
 }
+
+.viewer-table tbody th {
+  text-align: center;
+}

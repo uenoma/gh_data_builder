@@ -7,14 +7,14 @@
 }
 
 .shooting-name-column {
-  width: 150px;
+  width: 120px;
 }
 
 .hit-last-row {
   border-bottom: 3px double #444;
 }
 
-.dcp-circle {
+.times-circle {
   border-radius: 50%;
   border: 1px solid black;
   width: 10px;

@@ -8,9 +8,11 @@ const ShootingTypesViewer = ({ items }) => {
       <table className="viewer-table shooting-types-table">
         <thead>
           <tr>
-            <th colSpan="2" className="shooting-name-column">
+            {/* <th colSpan="2" className="shooting-name-column">
               武装＼距離
-            </th>
+            </th> */}
+            <th></th>
+            <th className="shooting-name-column">武装 ＼ 距離</th>
             <th>1</th>
             <th>2</th>
             <th>3</th>
@@ -47,7 +49,7 @@ const ShootingTypesViewer = ({ items }) => {
                 </td>
               ))}
               <td>
-                <div className={item.concentration ? "dcp-circle" : ""}>
+                <div className={item.concentration ? "times-circle" : ""}>
                   {item.times || ""}
                 </div>
               </td>
