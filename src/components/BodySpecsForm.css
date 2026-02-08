@@ -1,0 +1,38 @@
+.body-specs-part {
+  margin-bottom: 30px;
+}
+
+.body-specs-remove-button {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+.body-specs-name-input {
+  width: 100px;
+}
+
+.body-specs-value-input {
+  width: 60px;
+}
+
+.body-specs-armor-input {
+  width: 60px;
+}
+
+.body-specs-dcp-input {
+  width: 50px;
+}
+
+.body-specs-hp-input {
+  width: 50px;
+}
+
+.body-specs-combined-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.body-specs-add-button {
+  margin-top: 10px;
+}

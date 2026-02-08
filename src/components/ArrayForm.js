@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../labels';
+import './ArrayForm.css';
 
 const ArrayForm = ({ title, items, fields, onAdd, onUpdate, onRemove }) => {
   const handleUpdate = (index, field, value) => {
@@ -23,7 +24,7 @@ const ArrayForm = ({ title, items, fields, onAdd, onUpdate, onRemove }) => {
     <div>
       <h2>{title}</h2>
       {items.map((item, index) => (
-        <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '8px' }}>
+        <div key={index} className="array-form-item">
           {fields.map(field => (
             <input
               key={field}
@@ -31,13 +32,12 @@ const ArrayForm = ({ title, items, fields, onAdd, onUpdate, onRemove }) => {
               placeholder={fieldLabels[field] || field}
               value={item[field] || ''}
               onChange={(e) => handleUpdate(index, field, e.target.value)}
-              style={{ width: '80px' }}
             />
           ))}
           <button type="button" onClick={() => onRemove(index)}>{labels.remove}</button>
         </div>
       ))}
-      <button type="button" onClick={onAdd}>{labels.add} {title.slice(0, -1)}</button>
+      <button type="button" className="array-form-add-button" onClick={onAdd}>{labels.add} {title.slice(0, -1)}</button>
     </div>
   );
 };

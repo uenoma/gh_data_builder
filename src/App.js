@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import DataForm from './components/DataForm';
 import DataViewer from './components/DataViewer';
+import labels from './labels';
 
 function App() {
   const [view, setView] = useState('input');
@@ -125,8 +126,8 @@ function App() {
     <div className="App">
       <h1>GH Data Builder</h1>
       <div>
-        <button onClick={() => setView('input')}>データ入力</button>
-        <button onClick={() => setView('viewer')}>データ閲覧</button>
+        <button onClick={() => setView('input')}>{labels.dataInput}</button>
+        <button onClick={() => setView('viewer')}>{labels.dataViewer}</button>
       </div>
       {view === 'input' && (
         <DataForm

@@ -5,6 +5,8 @@ const labels = {
   msNumber: '型式番号',
   msName: '名称',
   msIcon: 'イメージ',
+  dataViewer: 'データ閲覧',
+  dataInput: 'データ入力',
 
   // Spec
   spec: 'スペック',
@@ -23,15 +25,19 @@ const labels = {
   grappleTypes: '格闘方法',
   shootingTypes: '射撃方法',
   weaponSpecs: '武装',
+  shootingAndWeapons: '射撃と武器',
+  typesAndSpecs: 'タイプとスペック',
 
   // Avoidance and Defence
   avoidance: '回避',
   defence: '防御',
+  avoidanceAndDefence: '回避と防御',
   front: '正面',
   side: '側面',
   back: '背面',
   right: '右側面',
   left: '左側面',
+  directionLabels: ['正面', '右側面', '左側面', '背面'],
   sameSame: '同方向 同箇所',
   sameDifferent: '同方向 異箇所',
   differentSame: '異方向 同箇所',
@@ -44,6 +50,7 @@ const labels = {
   leg: '脚',
   body: '胴体',
   arm: '腕',
+  item: '項目',
 
   // Common
   add: '追加',

@@ -27,16 +27,8 @@ const DataForm = ({
         </div>
       </div>
       <div className="form-section">
-        <h3>タイプとスペック</h3>
+        <h3>{labels.typesAndSpecs}</h3>
         <div className="form-grid">
-          <ArrayForm
-            title={labels.receiveTypes}
-            items={data.ms_data.receive_types}
-            fields={['nama', 'value']}
-            onAdd={() => onAddItem('receive_types')}
-            onUpdate={(index, field, value) => onUpdateItem('receive_types', index, field, value)}
-            onRemove={(index) => onRemoveItem('receive_types', index)}
-          />
           <ArrayForm
             title={labels.thrusters}
             items={data.ms_data.thrusters}
@@ -44,6 +36,14 @@ const DataForm = ({
             onAdd={() => onAddItem('thrusters')}
             onUpdate={(index, field, value) => onUpdateItem('thrusters', index, field, value)}
             onRemove={(index) => onRemoveItem('thrusters', index)}
+          />
+          <ArrayForm
+            title={labels.receiveTypes}
+            items={data.ms_data.receive_types}
+            fields={['nama', 'value']}
+            onAdd={() => onAddItem('receive_types')}
+            onUpdate={(index, field, value) => onUpdateItem('receive_types', index, field, value)}
+            onRemove={(index) => onRemoveItem('receive_types', index)}
           />
           <ArrayForm
             title={labels.grappleTypes}
@@ -56,7 +56,7 @@ const DataForm = ({
         </div>
       </div>
       <div className="form-section">
-        <h3>射撃と武器</h3>
+        <h3>{labels.shootingAndWeapons}</h3>
         <div className="form-row">
           <ShootingTypesForm
             shootingTypes={data.ms_data.shooting_types}
@@ -75,18 +75,16 @@ const DataForm = ({
         </div>
       </div>
       <div className="form-section">
-        <h3>回避と防御</h3>
-        <div className="form-row">
-          <AvoidanceForm avoidance={data.ms_data.avoidance} onUpdate={onUpdate} />
-          <DefenceForm defence={data.ms_data.defence} onUpdate={onUpdate} />
-        </div>
+        <h3>{labels.avoidanceAndDefence}</h3>
+        <AvoidanceForm avoidance={data.ms_data.avoidance} onUpdate={onUpdate} />
+        <DefenceForm defence={data.ms_data.defence} onUpdate={onUpdate} />
       </div>
       <div className="form-section">
-        <h3>部位</h3>
+        <h3>{labels.bodyPart}</h3>
         <BodyPartForm bodyPart={data.ms_data.body_part} onUpdate={onUpdate} />
       </div>
       <div className="form-section">
-        <h3>部位詳細</h3>
+        <h3>{labels.bodySpecs}</h3>
         <BodySpecsForm bodySpecs={data.ms_data.body_specs} onUpdate={onUpdate} />
       </div>
     </form>

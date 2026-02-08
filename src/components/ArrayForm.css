@@ -1,0 +1,14 @@
+.array-form-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.array-form-item input {
+  width: 80px;
+}
+
+.array-form-add-button {
+  margin-top: 10px;
+}

@@ -15,7 +15,7 @@ const DefenceForm = ({ defence, onUpdate }) => {
     different_different: labels.differentDifferent
   };
 
-  const valueLabels = ['正面', '右側面', '左側面', '背面'];
+  const valueLabels = labels.directionLabels;
 
   return (
     <div>
