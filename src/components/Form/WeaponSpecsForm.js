@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './WeaponSpecsForm.css';
 
 const WeaponSpecsForm = ({ items, onAdd, onUpdate, onRemove }) => {

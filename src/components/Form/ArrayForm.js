@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './ArrayForm.css';
 
 const ArrayForm = ({ title, items, fields, onAdd, onUpdate, onRemove }) => {

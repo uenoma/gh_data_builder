@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 
 const BodyPartForm = ({ bodyPart, onUpdate }) => {
   const handleUpdate = (direction, index, value) => {

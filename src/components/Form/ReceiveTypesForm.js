@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './ReceiveTypesForm.css';
 
 const ReceiveTypesForm = ({ items, onAdd, onUpdate, onRemove }) => {

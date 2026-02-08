@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './ShootingTypesForm.css';
 
 const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className }) => {

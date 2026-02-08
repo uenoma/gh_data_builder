@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import DataForm from './components/DataForm';
-import DataViewer from './components/DataViewer';
+import DataForm from './components/Form/DataForm';
+import DataViewer from './components/Viewer/DataViewer';
 import labels from './labels';
 
 function App() {
@@ -122,6 +122,22 @@ function App() {
     linkElement.click();
   };
 
+  const loadJSON = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const loadedData = JSON.parse(e.target.result);
+          setData(loadedData);
+        } catch (error) {
+          alert('JSONファイルの読み込みに失敗しました。');
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
+
   return (
     <div className="App">
       <h1>GH Data Builder</h1>
@@ -141,6 +157,14 @@ function App() {
         />
       )}
       {view === 'viewer' && <DataViewer data={data} />}
+      <input
+        type="file"
+        accept=".json"
+        onChange={loadJSON}
+        style={{ display: 'none' }}
+        id="json-file-input"
+      />
+      <button onClick={() => document.getElementById('json-file-input').click()} className="load-button">JSON読み込み</button>
       <button onClick={downloadJSON} className="download-button">JSONダウンロード</button>
     </div>
   );

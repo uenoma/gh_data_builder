@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './GrappleTypesForm.css';
 
 const GrappleTypesForm = ({ items, onAdd, onUpdate, onRemove }) => {

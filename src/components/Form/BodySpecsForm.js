@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 import './BodySpecsForm.css';
 
 const BodySpecsForm = ({ bodySpecs, onUpdate }) => {

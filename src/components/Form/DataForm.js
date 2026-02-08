@@ -11,7 +11,7 @@ import AvoidanceForm from './AvoidanceForm';
 import DefenceForm from './DefenceForm';
 import BodyPartForm from './BodyPartForm';
 import BodySpecsForm from './BodySpecsForm';
-import labels from '../labels';
+import labels from '../../labels';
 import './DataForm.css';
 
 const DataForm = ({

@@ -1,5 +1,5 @@
 import React from 'react';
-import labels from '../labels';
+import labels from '../../labels';
 
 const DefenceForm = ({ defence, onUpdate }) => {
   const handleUpdate = (key, index, value) => {
