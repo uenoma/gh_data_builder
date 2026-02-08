@@ -1,7 +1,7 @@
 import React from 'react';
 import labels from '../labels';
 
-const AvoidanceForm = ({ avoidance, onUpdate }) => {
+const AvoidanceForm = ({ avoidance, onUpdate, className }) => {
   const handleUpdate = (direction, index, value) => {
     const newValues = [...avoidance[direction].values];
     newValues[index] = value;
@@ -17,7 +17,7 @@ const AvoidanceForm = ({ avoidance, onUpdate }) => {
   const valueLabels = ['〜2', '〜4', '〜6', '〜7', '〜12', '13〜'];
 
   return (
-    <div>
+    <div className={className}>
       <h2>{labels.avoidance}</h2>
       <table className="data-table">
         <thead>

@@ -65,10 +65,9 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
           <table className="data-table">
             <thead>
               <tr>
-                <th>{labels.item}</th>
+                <th>{partLabels[part]}</th>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <th key={index}>
-                    {index + 1}
+                  <th key={`part-${index}`}>
                     <button 
                       type="button" 
                       onClick={() => removeItem(part, index)}

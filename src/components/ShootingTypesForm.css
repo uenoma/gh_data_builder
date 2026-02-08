@@ -1,0 +1,63 @@
+.shooting-types-form-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.shooting-types-form-item input {
+  width: 80px;
+}
+
+.shooting-types-add-button {
+  margin-top: 10px;
+}
+
+.body-specs-name-input {
+  width: 100px !important;
+  text-align: left !important;
+}
+
+.wide-input {
+  width: 120px !important;
+}
+
+.narrow-input {
+  width: 45px !important;
+}
+
+.hit-power-input {
+  width: 100%;
+  max-width: 100%;
+  font-size: 11px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.hit-power-cell {
+  width: 40px;
+  max-width: 40px;
+  padding: 1px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-container input {
+  width: 16px;
+}
+
+.ammunition-label {
+  font-size: 11px;
+  color: #e0e0e0;
+}
+
+.destructive-power-ammunition-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}

@@ -30,7 +30,7 @@ const labels = {
 
   // Avoidance and Defence
   avoidance: '回避',
-  defence: '防御',
+  defence: 'シールド防御',
   avoidanceAndDefence: '回避と防御',
   front: '正面',
   side: '側面',
@@ -67,7 +67,7 @@ const labels = {
   totalCountTimes: '同時撃ち',
   shootingDirection: '射界',
   hitRates: '命中率',
-  ammunition: '弾薬',
+  ammunition: '実弾',
   armor: '装甲',
   dcp: 'DCP',
   hp: '耐久力',

@@ -19,7 +19,7 @@ const BodyPartForm = ({ bodyPart, onUpdate }) => {
 
   return (
     <div>
-      <h2>{labels.bodyPart}</h2>
+      <h3>{labels.bodyPart}</h3>
       <table className="data-table">
         <thead>
           <tr>
