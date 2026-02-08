@@ -17,10 +17,10 @@ const WeaponSpecsViewer = ({ items }) => {
       <tbody>
         {items.map((item, index) => (
           <tr key={index}>
-            <td>{item.name}</td>
-            <td>{item.armor}</td>
+            <td>{item.name || '-'}</td>
+            <td>{item.armor || '-'}</td>
             <td>{item.dcp || '-'}</td>
-            <td>{item.hp}</td>
+            <td>{item.hp || '-'}</td>
           </tr>
         ))}
       </tbody>

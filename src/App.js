@@ -10,6 +10,7 @@ function App() {
     data_id: '',
     ms_number: '',
     ms_name: '',
+    ms_name_optional: '',
     ms_icon: '',
     ms_data: {
       spec: {

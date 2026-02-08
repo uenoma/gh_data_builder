@@ -1,78 +1,13 @@
 import React from 'react';
-import labels from '../../labels';
+import BodySpecPartViewer from './BodySpecPartViewer';
 
 const BodySpecsViewer = ({ bodySpecs }) => {
-  const partLabels = {
-    head: labels.head,
-    leg: labels.leg,
-    body: labels.body,
-    arm: labels.arm,
-    backpack: labels.backpack
-  };
-
   return (
     <div className="viewer-section">
       <div className="viewer-row">
         {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
           bodySpecs[part] && bodySpecs[part].length > 0 ? (
-          <div key={part} className="body-specs-part">
-            <table className="viewer-table">
-            <thead>
-              <tr>
-                <th>{partLabels[part]}</th>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <th key={`part-${index}`}>{item.name || `Item ${index + 1}`}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{labels.front}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[0] !== null ? item.values[0] : '-'}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>{labels.right}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[1] !== null ? item.values[1] : '-'}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>{labels.left}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[2] !== null ? item.values[2] : '-'}</td>
-                ))}
-              </tr>
-              <tr className="back-row">
-                <td>{labels.back}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.values && item.values[3] !== null ? item.values[3] : '-'}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>{labels.armor}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{item.armor !== null ? item.armor : '-'}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>{labels.dcp}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>
-                    <div className={item.part_explosion ? 'dcp-circle' : ''}>{item.dcp !== null ? item.dcp : '-'}</div>
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <td>{labels.hp}</td>
-                {bodySpecs[part] && bodySpecs[part].map((item, index) => (
-                  <td key={index}>{part === 'body' && item.body ? `(${item.hp})` : item.hp !== null ? item.hp : '-'}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-          </div>
+            <BodySpecPartViewer key={part} part={part} items={bodySpecs[part]} />
           ) : null
         ))}
       </div>

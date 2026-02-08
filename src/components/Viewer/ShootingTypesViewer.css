@@ -13,3 +13,16 @@
 .hit-last-row {
   border-bottom: 3px double #444;
 }
+
+.dcp-circle {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 0px auto 0px auto;
+  color: black;
+  font-size: 8px;
+  text-align: center;
+  line-height: 10px;
+}

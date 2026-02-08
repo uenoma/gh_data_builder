@@ -25,6 +25,10 @@ const BasicInfo = ({ data, onChange }) => {
             <td><input type="text" name="ms_name" value={data.ms_name} onChange={handleChange} /></td>
           </tr>
           <tr>
+            <td>{labels.msNameOptional}</td>
+            <td><input type="text" name="ms_name_optional" value={data.ms_name_optional} onChange={handleChange} /></td>
+          </tr>
+          <tr>
             <td>{labels.msIcon}</td>
             <td><input type="text" name="ms_icon" value={data.ms_icon} onChange={handleChange} /></td>
           </tr>

@@ -4,6 +4,7 @@ const labels = {
   dataId: 'データID',
   msNumber: '型式番号',
   msName: '名称',
+  msNameOptional: 'オプション',
   msIcon: 'イメージ',
   dataViewer: 'データ閲覧',
   dataInput: 'データ入力',

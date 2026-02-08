@@ -29,7 +29,7 @@ const SpecViewer = ({ spec }) => {
               {row.map(field => (
                 <React.Fragment key={field}>
                   <td>{fieldLabels[field] || field}</td>
-                  <td>{spec[field]}</td>
+                  <td>{spec[field] || '-'}</td>
                 </React.Fragment>
               ))}
               {row.length < 3 && <td colSpan={2}></td>}

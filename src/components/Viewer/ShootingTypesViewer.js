@@ -46,8 +46,10 @@ const ShootingTypesViewer = ({ items }) => {
                     (item.hit_rates[i] === 0 ? 0 : (item.hit_rates[i] ?? "-"))}
                 </td>
               ))}
-              <td className={item.concentration ? "dcp-circle" : ""}>
-                {item.times || ""}
+              <td>
+                <div className={item.concentration ? "dcp-circle" : ""}>
+                  {item.times || ""}
+                </div>
               </td>
               <td>
                 {item.total_count || ""}
