@@ -177,6 +177,72 @@
         "times": "1",
         "total_count": "1",
         "shooting_direction": "頭部"
+      },
+      {
+        "name": "ミサイルポッド",
+        "hit_rates": [
+          "9",
+          "8",
+          "7",
+          "7",
+          "6",
+          "6",
+          "5",
+          "4",
+          "3",
+          "2"
+        ],
+        "times": "21",
+        "concentration": true,
+        "total_count": "21",
+        "total_count_times": "2",
+        "shooting_direction": "胴体",
+        "power": [
+          "8",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "destructive_power": "3",
+        "ammunition": true
+      },
+      {
+        "name": "ビームキャノン",
+        "hit_rates": [
+          "13",
+          "12",
+          "12",
+          "11",
+          "11",
+          "10",
+          "9",
+          "8",
+          "7",
+          "6"
+        ],
+        "times": "2",
+        "total_count": "8",
+        "total_count_times": "2",
+        "shooting_direction": "胴体",
+        "power": [
+          "14",
+          "14",
+          "13",
+          "13",
+          "12",
+          "12",
+          "11",
+          "11",
+          "10",
+          "9"
+        ],
+        "destructive_power": "1"
       }
     ],
     "weapon_specs": [
@@ -645,7 +711,7 @@
             33,
             33
           ],
-          "armor": "7+2",
+          "armor": "7-2",
           "dcp": 8,
           "part_explosion": true,
           "hp": 3
@@ -658,7 +724,7 @@
             43,
             42
           ],
-          "armor": "7+2",
+          "armor": "7-2",
           "dcp": 8,
           "part_explosion": true,
           "hp": 3
