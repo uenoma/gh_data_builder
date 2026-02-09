@@ -14,7 +14,7 @@
 .spec-viewer-table th,
 .spec-viewer-table td {
   border: 1px solid #444;
-  padding: 2px;
+  padding: 1px;
   text-align: center;
   color: black;
   background-color: var(--viewer-bg);

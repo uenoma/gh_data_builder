@@ -36,10 +36,11 @@ const DataViewer = ({ data }) => {
           </div>
           <div className="viewer-row">
             <BodyPartViewer bodyPart={data.ms_data.body_part} />
-            <div className="viewer-spacer50"></div>
+            <div className="viewer-spacer10"></div>
+            <div className="viewer-spacer10"></div>
+            <div className="viewer-spacer10"></div>
             <WeaponSpecsViewer items={data.ms_data.weapon_specs} />
             <ReceiveTypesViewer items={data.ms_data.receive_types} />
-            <div className="viewer-spacer10"></div>
             <div className="viewer-spacer10"></div>
             <SpecViewer spec={data.ms_data.spec} />
             <IconViewer msIcon={data.ms_icon} />

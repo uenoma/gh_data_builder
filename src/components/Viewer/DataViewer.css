@@ -4,6 +4,7 @@
   background-color: var(--viewer-bg);
   width: 1400px;
   margin: 0 auto;
+  border-bottom: solid 1px white;
 }
 
 .viewer-section {

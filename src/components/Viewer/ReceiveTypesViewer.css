@@ -14,12 +14,17 @@
 .receive-types-viewer-table th,
 .receive-types-viewer-table td {
   border: 1px solid #444;
-  padding: 2px;
+  padding: 1px;
   text-align: center;
   color: black;
   background-color: var(--viewer-bg);
   font-size: 10px;
   white-space: nowrap;
+}
+
+.receive-types-viewer-table th:first-child,
+.receive-types-viewer-table td:first-child {
+  width: 120px;
 }
 
 .receive-types-viewer-table th {
