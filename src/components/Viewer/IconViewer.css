@@ -1,5 +1,5 @@
 .icon-viewer-section {
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .icon-image {

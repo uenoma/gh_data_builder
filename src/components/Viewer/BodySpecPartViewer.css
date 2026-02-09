@@ -14,7 +14,7 @@
   padding: 2px;
   text-align: center;
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
   font-size: 10px;
   white-space: nowrap;
 }
@@ -26,7 +26,7 @@
 
 
 .body-spec-part-table th {
-  background-color: #0d7377;
+  background-color: var(--accent-color);
   font-weight: bold;
   font-size: 8px;
   white-space: normal;

@@ -6,6 +6,12 @@ body {
   font-size: 13px;
 }
 
+:root {
+  --viewer-bg: #b6ccb7;
+  --accent-color: #2d9fa3;
+  --form-accent-color: #564f99;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -123,7 +129,7 @@ body {
 }
 
 .data-table thead th {
-  background-color: #0d7377;
+  background-color: var(--form-accent-color);
   color: #e0e0e0;
   font-weight: bold;
 }
@@ -147,7 +153,7 @@ body {
 
 .data-table input:focus {
   outline: none;
-  border-color: #0d7377;
+  border-color: var(--form-accent-color);
   background-color: #2a2a2a;
 }
 
@@ -168,16 +174,16 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #0d7377;
+  border-color: var(--form-accent-color);
   background-color: #333;
 }
 
 input[type="checkbox"] {
-  accent-color: #0d7377;
+  accent-color: var(--form-accent-color);
 }
 
 button {
-  background-color: #0d7377;
+  background-color: var(--form-accent-color);
   color: #e0e0e0;
   border: none;
   border-radius: 4px;

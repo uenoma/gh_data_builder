@@ -1,5 +1,5 @@
 .weapon-specs-viewer-section {
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .weapon-specs-viewer-section h2 {
@@ -17,12 +17,12 @@
   padding: 2px;
   text-align: center;
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
   font-size: 10px;
   white-space: nowrap;
 }
 
 .weapon-specs-viewer-table th {
-  background-color: #0d7377;
+  background-color: var(--accent-color);
   font-weight: bold;
 }

@@ -1,5 +1,5 @@
 .spec-viewer-section {
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .spec-viewer-section h2 {
@@ -17,7 +17,7 @@
   padding: 2px;
   text-align: center;
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
   font-size: 10px;
   white-space: nowrap;
 }

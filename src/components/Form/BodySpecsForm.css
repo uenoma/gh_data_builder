@@ -19,7 +19,7 @@
 }
 
 .body-specs-table thead th {
-  background-color: #0d7377;
+  background-color: var(--form-accent-color);
   color: #e0e0e0;
   font-weight: bold;
 }
@@ -43,7 +43,7 @@
 
 .body-specs-table input:focus {
   outline: none;
-  border-color: #0d7377;
+  border-color: var(--form-accent-color);
   background-color: #2a2a2a;
 }
 

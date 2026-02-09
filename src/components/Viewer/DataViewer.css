@@ -1,13 +1,13 @@
 .data-viewer {
   padding: 10px 10px 10px 10px;
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
   width: 1400px;
   margin: 0 auto;
 }
 
 .viewer-section {
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .viewer-section h2 {
@@ -25,13 +25,13 @@
   padding: 6px;
   text-align: center;
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
   font-size: 10px;
   white-space: nowrap;
 }
 
 .viewer-table thead th {
-  background-color: #0d7377;
+  background-color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -42,7 +42,7 @@
 
 .viewer-table tbody {
   color: black;
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .dcp-circle {

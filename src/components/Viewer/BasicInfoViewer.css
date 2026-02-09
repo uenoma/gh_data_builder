@@ -1,5 +1,5 @@
 .basic-info-viewer-section {
-  background-color: #86a787;
+  background-color: var(--viewer-bg);
 }
 
 .basic-info-viewer-section h2 {
