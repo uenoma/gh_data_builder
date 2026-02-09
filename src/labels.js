@@ -1,6 +1,6 @@
 const labels = {
   // Basic Info
-  basicInfo: '基本情報',
+  basicInfo: '識別情報',
   dataId: 'データID',
   msNumber: '型式番号',
   msName: '名称',
@@ -10,7 +10,7 @@ const labels = {
   dataInput: 'データ入力',
 
   // Spec
-  spec: 'スペック',
+  spec: '機体性能',
   sensorRank: 'センサーランク',
   motionThrust: '回避運動推力',
   minStraight: '最小直進距離',

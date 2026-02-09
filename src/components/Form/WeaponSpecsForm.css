@@ -52,3 +52,7 @@
 .weapon-spec-add-button {
   margin-top: 10px;
 }
+
+.weapon-spec-name-input {
+  width: 120px !important;
+}

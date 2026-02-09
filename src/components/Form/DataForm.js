@@ -39,22 +39,21 @@ const DataForm = ({
       </div>
       <div className="form-section">
         <div className="form-grid">
-          <ReceiveTypesForm
-            items={data.ms_data.receive_types}
-            onAdd={() => onAddItem('receive_types')}
-            onUpdate={(index, field, value) => onUpdateItem('receive_types', index, field, value)}
-            onRemove={(index) => onRemoveItem('receive_types', index)}
-          />
           <GrappleTypesForm
             items={data.ms_data.grapple_types}
             onAdd={() => onAddItem('grapple_types')}
             onUpdate={(index, field, value) => onUpdateItem('grapple_types', index, field, value)}
             onRemove={(index) => onRemoveItem('grapple_types', index)}
           />
+          <ReceiveTypesForm
+            items={data.ms_data.receive_types}
+            onAdd={() => onAddItem('receive_types')}
+            onUpdate={(index, field, value) => onUpdateItem('receive_types', index, field, value)}
+            onRemove={(index) => onRemoveItem('receive_types', index)}
+          />
         </div>
       </div>
       <div className="form-section">
-        <h3>{labels.shootingAndWeapons}</h3>
         <ShootingTypesForm
           shootingTypes={data.ms_data.shooting_types}
           onAdd={() => onAddItem('shooting_types')}

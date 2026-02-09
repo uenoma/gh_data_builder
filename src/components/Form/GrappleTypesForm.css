@@ -49,6 +49,10 @@
   background-color: #2a2a2a;
 }
 
+.grapple-type-name-input {
+  width: 120px !important;
+}
+
 .grapple-type-add-button {
   margin-top: 10px;
 }
