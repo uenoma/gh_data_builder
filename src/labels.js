@@ -51,7 +51,7 @@ const labels = {
   leg: '脚',
   body: '胴体',
   arm: '腕',
-  backpack: 'バックパック',
+  backpack: 'BP',
   item: '項目',
 
   // Common

@@ -11,6 +11,8 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
       newItems[index].values = newValues;
     } else if (field === 'part_explosion' || field === 'body') {
       newItems[index][field] = value;
+    } else if (field === 'armor') {
+      newItems[index][field] = value === '' ? null : value;
     } else {
       newItems[index][field] = value === '' ? (field === 'name' ? '' : null) : (field === 'name' ? value : Number(value));
     }
@@ -139,7 +141,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
                   <td key={index}>
                     <input 
-                      type="number" 
+                      type="text" 
                       value={item.armor !== null && item.armor !== undefined ? item.armor : ''} 
                       onChange={(e) => handleUpdate(part, index, 'armor', null, e.target.value)}
                       className="body-specs-armor-input"
