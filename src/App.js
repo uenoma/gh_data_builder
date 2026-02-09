@@ -49,7 +49,8 @@ function App() {
         head: [],
         leg: [],
         body: [],
-        arm: []
+        arm: [],
+        backpack: []
       }
     }
   });
