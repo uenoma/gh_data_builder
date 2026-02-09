@@ -39,7 +39,7 @@ const BodySpecPartViewer = ({ part, items }) => {
               <td key={index}>{item.values && item.values[3] !== null ? item.values[3] : '-'}</td>
             ))}
           </tr>
-          <tr>
+          <tr className="armor-row">
             <td>{labels.armor}</td>
             {items && items.map((item, index) => (
               <td key={index}>{item.armor !== null ? item.armor : '-'}</td>

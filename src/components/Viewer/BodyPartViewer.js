@@ -17,7 +17,7 @@ const BodyPartViewer = ({ bodyPart }) => {
       <table className="body-part-viewer-table body-part-table">
         <thead>
           <tr>
-            <th></th>
+            <th>{labels.bodyPart}</th>
             {positionLabels.map((label, index) => (
               <th key={index}>{label}</th>
             ))}

@@ -16,7 +16,7 @@ const AvoidanceViewer = ({ avoidance }) => {
       <table className="viewer-table">
         <thead>
           <tr>
-            <th></th>
+            <th>{labels.avoidance}</th>
             {valueLabels.map((label, index) => (
               <th key={index}>{label}</th>
             ))}

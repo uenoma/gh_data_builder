@@ -153,12 +153,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>GH Data Builder</h1>
-      <div className="tab-buttons">
+      <h1 className="print-hidden">GH Data Builder</h1>
+      <div className="tab-buttons print-hidden">
         <button className={`tab-button ${view === 'input' ? 'active' : ''}`} onClick={() => setView('input')}>{labels.dataInput}</button>
         <button className={`tab-button ${view === 'viewer' ? 'active' : ''}`} onClick={() => setView('viewer')}>{labels.dataViewer}</button>
       </div>
-      <hr className="tab-separator" />
+      <hr className="tab-separator print-hidden" />
       {view === 'input' && (
         <DataForm
           data={data}
@@ -178,8 +178,8 @@ function App() {
         style={{ display: 'none' }}
         id="json-file-input"
       />
-      <button onClick={() => document.getElementById('json-file-input').click()} className="load-button">JSON読み込み</button>
-      <button onClick={downloadJSON} className="download-button">JSONダウンロード</button>
+      <button onClick={() => document.getElementById('json-file-input').click()} className="load-button print-hidden">JSON読み込み</button>
+      <button onClick={downloadJSON} className="download-button print-hidden">JSONダウンロード</button>
     </div>
   );
 }

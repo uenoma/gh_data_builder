@@ -8,7 +8,7 @@ const DefenceViewer = ({ defence }) => {
       <table className="defence-viewer-table defence-table">
         <thead>
           <tr>
-            <th></th>
+            <th>{labels.defence}</th>
             <th>{labels.front}</th>
             <th>{labels.right}</th>
             <th>{labels.left}</th>
