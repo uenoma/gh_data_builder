@@ -178,6 +178,7 @@ function App() {
         style={{ display: 'none' }}
         id="json-file-input"
       />
+      <br></br>
       <button onClick={() => document.getElementById('json-file-input').click()} className="load-button print-hidden">JSON読み込み</button>
       <button onClick={downloadJSON} className="download-button print-hidden">JSONダウンロード</button>
     </div>
