@@ -33,7 +33,7 @@ const WeaponSpecsForm = ({ items, onAdd, onUpdate, onRemove }) => {
               </td>
               <td>
                 <input
-                  type="number"
+                  type="text"
                   value={item.armor || ''}
                   onChange={(e) => handleUpdate(index, 'armor', e.target.value)}
                   className="weapon-spec-armor-input"
@@ -41,7 +41,7 @@ const WeaponSpecsForm = ({ items, onAdd, onUpdate, onRemove }) => {
               </td>
               <td>
                 <input
-                  type="number"
+                  type="text"
                   value={item.dcp || ''}
                   onChange={(e) => handleUpdate(index, 'dcp', e.target.value)}
                   className="weapon-spec-dcp-input"
@@ -49,7 +49,7 @@ const WeaponSpecsForm = ({ items, onAdd, onUpdate, onRemove }) => {
               </td>
               <td>
                 <input
-                  type="number"
+                  type="text"
                   value={item.hp || ''}
                   onChange={(e) => handleUpdate(index, 'hp', e.target.value)}
                   className="weapon-spec-hp-input"

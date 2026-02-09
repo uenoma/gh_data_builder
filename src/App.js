@@ -154,10 +154,11 @@ function App() {
   return (
     <div className="App">
       <h1>GH Data Builder</h1>
-      <div>
-        <button onClick={() => setView('input')}>{labels.dataInput}</button>
-        <button onClick={() => setView('viewer')}>{labels.dataViewer}</button>
+      <div className="tab-buttons">
+        <button className={`tab-button ${view === 'input' ? 'active' : ''}`} onClick={() => setView('input')}>{labels.dataInput}</button>
+        <button className={`tab-button ${view === 'viewer' ? 'active' : ''}`} onClick={() => setView('viewer')}>{labels.dataViewer}</button>
       </div>
+      <hr className="tab-separator" />
       {view === 'input' && (
         <DataForm
           data={data}

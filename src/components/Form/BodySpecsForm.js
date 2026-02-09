@@ -166,6 +166,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                         checked={item.part_explosion || false} 
                         onChange={(e) => handleUpdate(part, index, 'part_explosion', null, e.target.checked)}
                         title={labels.partExplosion}
+                        tabIndex="-1"
                       />
                     </div>
                   </td>
@@ -189,6 +190,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                           checked={item.body || false} 
                           onChange={(e) => handleUpdate(part, index, 'body', null, e.target.checked)}
                           title={labels.bodyFlag}
+                          tabIndex="-1"
                         />
                       )}
                     </div>
