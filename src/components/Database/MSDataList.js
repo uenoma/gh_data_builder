@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './MSDataList.css';
+import './MsDataList.css';
+import DataViewer from '../Viewer/DataViewer';
 
 const MsDataList = () => {
   const [mobileSuits, setMobileSuits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedMS, setSelectedMS] = useState(null);
 
   useEffect(() => {
     const fetchMobileSuits = async () => {
@@ -34,34 +36,37 @@ const MsDataList = () => {
   }
 
   return (
-    <div className="ms-data-list">
-      <h2>Mobile Suit Database</h2>
-      <table className="ms-table">
-        <thead>
-          <tr>
-            <th>MS Number</th>
-            <th>MS Name</th>
-            <th>Optional Name</th>
-            <th>Icon</th>
-          </tr>
-        </thead>
-        <tbody>
-          {mobileSuits.map((ms) => (
-            <tr key={ms.id}>
-              <td>{ms.ms_number}</td>
-              <td>{ms.ms_name}</td>
-              <td>{ms.ms_name_optional || '-'}</td>
-              <td>
-                {ms.ms_icon ? (
-                  <img src={ms.ms_icon} alt={`${ms.ms_name} icon`} className="ms-icon" />
-                ) : (
-                  '-'
-                )}
-              </td>
+    <div>
+      {selectedMS && <DataViewer data={selectedMS} />}
+      <div className="ms-data-list">
+        <h2>Mobile Suit Database</h2>
+        <table className="ms-table">
+          <thead>
+            <tr>
+              <th>MS Number</th>
+              <th>MS Name</th>
+              <th>Optional Name</th>
+              <th>Icon</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {mobileSuits.map((ms) => (
+              <tr key={ms.id} onClick={() => setSelectedMS(ms)} style={{ cursor: 'pointer' }}>
+                <td>{ms.ms_number}</td>
+                <td>{ms.ms_name}</td>
+                <td>{ms.ms_name_optional || '-'}</td>
+                <td>
+                  {ms.ms_icon ? (
+                    <img src={ms.ms_icon} alt={`${ms.ms_name} icon`} className="ms-icon" />
+                  ) : (
+                    '-'
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
