@@ -1,0 +1,53 @@
+.ms-data-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ms-data-list h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.ms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.ms-table th,
+.ms-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.ms-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.ms-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ms-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.ms-icon {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}

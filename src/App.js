@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import DataForm from './components/Form/DataForm';
 import DataViewer from './components/Viewer/DataViewer';
+import MsDataList from './components/Database/MSDataList';
 import labels from './labels';
 
 function App() {
@@ -157,6 +158,7 @@ function App() {
       <div className="tab-buttons print-hidden">
         <button className={`tab-button ${view === 'input' ? 'active' : ''}`} onClick={() => setView('input')}>{labels.dataInput}</button>
         <button className={`tab-button ${view === 'viewer' ? 'active' : ''}`} onClick={() => setView('viewer')}>{labels.dataViewer}</button>
+        <button className={`tab-button ${view === 'database' ? 'active' : ''}`} onClick={() => setView('database')}>{labels.database}</button>
       </div>
       <hr className="tab-separator print-hidden" />
       {view === 'input' && (
@@ -171,6 +173,7 @@ function App() {
         />
       )}
       {view === 'viewer' && <DataViewer data={data} />}
+      {view === 'database' && <MsDataList />}
       <input
         type="file"
         accept=".json"

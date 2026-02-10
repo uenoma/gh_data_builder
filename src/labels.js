@@ -8,6 +8,7 @@ const labels = {
   msIcon: 'イメージ',
   dataViewer: 'データ閲覧',
   dataInput: 'データ入力',
+  database: 'データベース',
 
   // Spec
   spec: '機体性能',
