@@ -3,8 +3,7 @@
   color: black;
   background-color: var(--viewer-bg);
   width: 1400px;
-  margin: 0 auto;
-  border-bottom: solid 1px white;
+  margin: 0px auto 1px auto;
 }
 
 .viewer-section {
