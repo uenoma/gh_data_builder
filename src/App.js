@@ -234,8 +234,8 @@ function App() {
     };
 
     const updateDatabase = async () => {
-      if (!data.ms_name.trim()) {
-        alert('MS名を入力してください。');
+      if (!data.data_id.trim() || !data.ms_name.trim()) {
+        alert('データID、名称は必須です。');
         return;
       }
       try {
