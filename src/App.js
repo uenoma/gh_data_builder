@@ -232,9 +232,16 @@ function App() {
     };
 
     const updateDatabase = async () => {
+      if (!data.ms_name.trim()) {
+        alert('MS名を入力してください。');
+        return;
+      }
       try {
-        const response = await fetch('https://dndhideout.com/gh/gh_backend/public/api/mobile-suits', {
-          method: 'POST',
+        const isNew = !selectedMS;
+        const method = isNew ? 'POST' : 'PUT';
+        const url = isNew ? 'https://dndhideout.com/gh/gh_backend/public/api/mobile-suits' : `https://dndhideout.com/gh/gh_backend/public/api/mobile-suits/${data.data_id}`;
+        const response = await fetch(url, {
+          method: method,
           headers: {
             'Content-Type': 'application/json',
           },
@@ -243,9 +250,9 @@ function App() {
         if (!response.ok) {
           throw new Error('Failed to update database');
         }
-        alert('データベースを更新しました。');
+        alert(isNew ? '新規作成しました。' : '更新しました。');
       } catch (error) {
-        alert('データベース更新に失敗しました: ' + error.message);
+        alert('データベース操作に失敗しました: ' + error.message);
       }
     };
 
