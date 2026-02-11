@@ -239,7 +239,7 @@ function App() {
       try {
         const isNew = !selectedMS;
         const method = isNew ? 'POST' : 'PUT';
-        const url = isNew ? 'https://dndhideout.com/gh/gh_backend/public/api/mobile-suits' : `https://dndhideout.com/gh/gh_backend/public/api/mobile-suits/${data.data_id}`;
+        const url = isNew ? 'https://dndhideout.com/gh/gh_backend/public/api/mobile-suits' : `https://dndhideout.com/gh/gh_backend/public/api/mobile-suits/${data.id}`;
         const response = await fetch(url, {
           method: method,
           headers: {
