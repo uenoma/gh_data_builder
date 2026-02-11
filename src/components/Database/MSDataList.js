@@ -75,8 +75,9 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
             <tr>
               <th onClick={() => handleSort('ms_number')} style={{ cursor: 'pointer' }}>型式番号 {sortKey === 'ms_number' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
               <th onClick={() => handleSort('ms_name')} style={{ cursor: 'pointer' }}>機体名称 {sortKey === 'ms_name' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
-              <th onClick={() => handleSort('ms_name_optional')} style={{ cursor: 'pointer' }}>オプション {sortKey === 'ms_name_optional' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
-              <th>Icon</th>
+              <th onClick={() => handleSort('ms_name_optional')} style={{ cursor: 'pointer' }}>オプション {sortKey === 'ms_name_optional' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>              
+              <th onClick={() => handleSort('data_id')} style={{ cursor: 'pointer' }}>識別子 {sortKey === 'data_id' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>              
+              <th>イメージ</th>
             </tr>
           </thead>
           <tbody>
@@ -85,6 +86,7 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
                 <td>{ms.ms_number}</td>
                 <td>{ms.ms_name}</td>
                 <td>{ms.ms_name_optional || '-'}</td>
+                <td>{ms.data_id}</td>
                 <td>
                   {ms.ms_icon ? (
                     <img src={ms.ms_icon} alt={`${ms.ms_name} icon`} className="ms-icon" />

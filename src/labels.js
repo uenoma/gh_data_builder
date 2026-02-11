@@ -75,7 +75,7 @@ const labels = {
   dcp: 'DCP',
   hp: '耐久力',
   partExplosion: '部分爆発',
-  bodyFlag: '胴体と耐久力共有',
+  bodyFlag: '耐久力共有',
   field: 'フィールド',
   value: '値',
   thruster: '推力種類',

@@ -2,12 +2,16 @@
   width: 900px;
 }
 
-.shooting-types-table th:not(.shooting-name-column) {
+.shooting-types-table th:not(.shooting-name-column):not(.shooting-direction-column) {
   width: 30px;
 }
 
 .shooting-name-column {
-  width: 120px;
+  width: 130px;
+}
+
+.shooting-direction-column {
+  width: 60px;
 }
 
 .hit-last-row {

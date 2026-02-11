@@ -25,7 +25,7 @@ const ShootingTypesViewer = ({ items }) => {
             <th>13〜15</th>
             <th>{labels.times}</th>
             <th>{labels.totalCount}</th>
-            <th>{labels.shootingDirection}</th>
+            <th className="shooting-direction-column">{labels.shootingDirection}</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +45,7 @@ const ShootingTypesViewer = ({ items }) => {
               {Array.from({ length: 10 }, (_, i) => (
                 <td key={`hit-${index}-${i}`}>
                   {item.hit_rates &&
-                    (item.hit_rates[i] === 0 ? 0 : (item.hit_rates[i] !== null ? item.hit_rates[i] : "-"))}
+                    (item.hit_rates[i] === 0 ? 0 : (item.hit_rates[i] !== null ? item.hit_rates[i] : ""))}
                 </td>
               ))}
               <td>
@@ -54,7 +54,7 @@ const ShootingTypesViewer = ({ items }) => {
                 </div>
               </td>
               <td>
-                {item.total_count || ""}
+                {item.total_count || "NO"}
                 {item.total_count_times > 1 ? `×${item.total_count_times}` : ""}
               </td>
               <td>{item.shooting_direction || ""}</td>
@@ -77,7 +77,9 @@ const ShootingTypesViewer = ({ items }) => {
                     ? (item.power.toString()[i] ?? "")
                     : "";
                 const displayValue =
-                  item.ammunition && i >= 1 && powerValue
+                  powerValue === "-"
+                    ? "-"
+                    : item.ammunition && i >= 1 && powerValue
                     ? `(${powerValue})`
                     : powerValue;
                 return <td key={`power-${index}-${i}`}>{displayValue}</td>;

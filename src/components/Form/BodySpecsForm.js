@@ -173,7 +173,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                 ))}
               </tr>
               <tr>
-                <td>{labels.hp}{part === 'body' ? ` / ${labels.bodyFlag}` : ''}</td>
+                <td>{labels.hp}{(part === 'head' || part === 'body') ? ` / ${labels.bodyFlag}` : ''}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
                   <td key={index}>
                     <div className="body-specs-combined-cell">
@@ -184,7 +184,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                         className="body-specs-hp-input"
                         placeholder="HP"
                       />
-                      {part === 'body' && (
+                      {(part === 'head' || part === 'body') && (
                         <input 
                           type="checkbox" 
                           checked={item.body || false} 
