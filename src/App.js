@@ -10,6 +10,7 @@ function App() {
   const [selectedMS, setSelectedMS] = useState(null);
   const [sortKey, setSortKey] = useState('ms_number');
   const [sortOrder, setSortOrder] = useState('asc');
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [data, setData] = useState({
     data_id: '',
     ms_number: '',
@@ -158,7 +159,7 @@ function App() {
   const renderContent = () => {
     switch (view) {
       case 'database':
-        return <MSDataList setData={setData} setView={setView} selectedMS={selectedMS} setSelectedMS={setSelectedMS} sortKey={sortKey} setSortKey={setSortKey} sortOrder={sortOrder} setSortOrder={setSortOrder} />;
+        return <MSDataList setData={setData} setView={setView} selectedMS={selectedMS} setSelectedMS={setSelectedMS} sortKey={sortKey} setSortKey={setSortKey} sortOrder={sortOrder} setSortOrder={setSortOrder} refreshTrigger={refreshTrigger} />;
       case 'edit':
         return (
           <DataForm
@@ -253,6 +254,10 @@ function App() {
           throw new Error('Failed to update database');
         }
         alert(isNew ? '新規作成しました。' : '更新しました。');
+        if (isNew) {
+          setRefreshTrigger(prev => prev + 1);
+          setView('database');
+        }
       } catch (error) {
         alert('データベース操作に失敗しました: ' + error.message);
       }

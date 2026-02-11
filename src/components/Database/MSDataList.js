@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MSDataList.css';
 
-const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setSortKey, sortOrder, setSortOrder }) => {
+const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setSortKey, sortOrder, setSortOrder, refreshTrigger }) => {
   const [mobileSuits, setMobileSuits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -49,7 +49,7 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
     };
 
     fetchMobileSuits();
-  }, []);
+  }, [refreshTrigger]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
