@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import './MSDataList.css';
 
-const MsDataList = ({ setData, setView, selectedMS, setSelectedMS }) => {
+const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setSortKey, sortOrder, setSortOrder }) => {
   const [mobileSuits, setMobileSuits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSort = (key) => {
+    if (sortKey === key) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortOrder('asc');
+    }
+  };
+
+  const sortedMobileSuits = [...mobileSuits].sort((a, b) => {
+    const aVal = a[sortKey];
+    const bVal = b[sortKey];
+    if (sortOrder === 'asc') {
+      return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
+    } else {
+      return aVal < bVal ? 1 : aVal > bVal ? -1 : 0;
+    }
+  });
+
+  const filteredMobileSuits = sortedMobileSuits.filter(ms =>
+    ms.ms_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    ms.ms_number.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (ms.ms_name_optional && ms.ms_name_optional.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
   useEffect(() => {
     const fetchMobileSuits = async () => {
@@ -36,18 +62,25 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS }) => {
   return (
     <div>
       <div className="ms-data-list">
-        <h2>Mobile Suit Database</h2>
+        <h2>機体データ一覧</h2>
+        <input
+          type="text"
+          placeholder="型式番号、機体名称、オプションで検索"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ marginBottom: '10px', padding: '5px', width: '100%' }}
+        />
         <table className="ms-table">
           <thead>
             <tr>
-              <th>MS Number</th>
-              <th>MS Name</th>
-              <th>Optional Name</th>
+              <th onClick={() => handleSort('ms_number')} style={{ cursor: 'pointer' }}>型式番号 {sortKey === 'ms_number' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
+              <th onClick={() => handleSort('ms_name')} style={{ cursor: 'pointer' }}>機体名称 {sortKey === 'ms_name' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
+              <th onClick={() => handleSort('ms_name_optional')} style={{ cursor: 'pointer' }}>オプション {sortKey === 'ms_name_optional' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
               <th>Icon</th>
             </tr>
           </thead>
           <tbody>
-            {mobileSuits.map((ms) => (
+            {filteredMobileSuits.map((ms) => (
               <tr key={ms.id} onClick={() => { setSelectedMS(ms); setData(ms); setView('viewer'); }} style={{ cursor: 'pointer' }} className={selectedMS && selectedMS.id === ms.id ? 'selected' : ''}>
                 <td>{ms.ms_number}</td>
                 <td>{ms.ms_name}</td>

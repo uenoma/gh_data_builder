@@ -8,6 +8,8 @@ import labels from './labels';
 function App() {
   const [view, setView] = useState('database');
   const [selectedMS, setSelectedMS] = useState(null);
+  const [sortKey, setSortKey] = useState('ms_number');
+  const [sortOrder, setSortOrder] = useState('asc');
   const [data, setData] = useState({
     data_id: '',
     ms_number: '',
@@ -156,7 +158,7 @@ function App() {
   const renderContent = () => {
     switch (view) {
       case 'database':
-        return <MSDataList setData={setData} setView={setView} selectedMS={selectedMS} setSelectedMS={setSelectedMS} />;
+        return <MSDataList setData={setData} setView={setView} selectedMS={selectedMS} setSelectedMS={setSelectedMS} sortKey={sortKey} setSortKey={setSortKey} sortOrder={sortOrder} setSortOrder={setSortOrder} />;
       case 'edit':
         return (
           <DataForm
