@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './MsDataList.css';
+import './MSDataList.css';
 import DataViewer from '../Viewer/DataViewer';
 
 const MsDataList = () => {

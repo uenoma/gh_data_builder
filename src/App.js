@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import DataForm from './components/Form/DataForm';
 import DataViewer from './components/Viewer/DataViewer';
-import MsDataList from './components/Database/MsDataList';
+import MSDataList from './components/Database/MSDataList';
 import labels from './labels';
 
 function App() {
@@ -173,7 +173,7 @@ function App() {
         />
       )}
       {view === 'viewer' && <DataViewer data={data} />}
-      {view === 'database' && <MsDataList />}
+      {view === 'database' && <MSDataList />}
       <input
         type="file"
         accept=".json"
