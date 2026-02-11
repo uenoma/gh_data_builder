@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './MSDataList.css';
-import DataViewer from '../Viewer/DataViewer';
 
-const MsDataList = () => {
+const MsDataList = ({ setData, setView, selectedMS, setSelectedMS }) => {
   const [mobileSuits, setMobileSuits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedMS, setSelectedMS] = useState(null);
 
   useEffect(() => {
     const fetchMobileSuits = async () => {
@@ -37,7 +35,6 @@ const MsDataList = () => {
 
   return (
     <div>
-      {selectedMS && <DataViewer data={selectedMS} />}
       <div className="ms-data-list">
         <h2>Mobile Suit Database</h2>
         <table className="ms-table">
@@ -51,7 +48,7 @@ const MsDataList = () => {
           </thead>
           <tbody>
             {mobileSuits.map((ms) => (
-              <tr key={ms.id} onClick={() => setSelectedMS(ms)} style={{ cursor: 'pointer' }}>
+              <tr key={ms.id} onClick={() => { setSelectedMS(ms); setData(ms); setView('viewer'); }} style={{ cursor: 'pointer' }} className={selectedMS && selectedMS.id === ms.id ? 'selected' : ''}>
                 <td>{ms.ms_number}</td>
                 <td>{ms.ms_name}</td>
                 <td>{ms.ms_name_optional || '-'}</td>

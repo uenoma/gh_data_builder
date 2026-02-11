@@ -51,3 +51,7 @@
   padding: 20px;
   font-size: 18px;
 }
+
+.ms-table tr.selected {
+  background-color: #cce7ff;
+}

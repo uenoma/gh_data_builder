@@ -6,8 +6,8 @@ const labels = {
   msName: '名称',
   msNameOptional: 'オプション',
   msIcon: 'イメージ',
-  dataViewer: 'データ閲覧',
-  dataInput: 'データ入力',
+  dataViewer: 'プレビュー',
+  dataEdit: 'データ編集',
   database: 'データベース',
 
   // Spec

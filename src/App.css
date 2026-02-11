@@ -210,6 +210,12 @@ button:active {
   margin-right: 10px;
 }
 
+.load-button, .download-button, .create-button, .update-button {
+  height: 40px;
+  padding: 10px 20px;
+  margin: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: black;
 }
@@ -253,8 +259,9 @@ pre {
 }
 
 .tab-button.active {
-  background-color: #555;
-  border-bottom: 1px solid #555;
+  background-color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  color: white;
 }
 
 .tab-button:hover {
