@@ -15,7 +15,6 @@ export async function updateDatabase(data, isNew, id = null) {
     },
     body: JSON.stringify(data),
   });
-  console.log(response)
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
     throw new Error(errorData.message || 'Failed to update database');
