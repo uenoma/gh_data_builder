@@ -197,6 +197,7 @@ function App() {
         return (
           <DataForm
             data={data}
+            isNew={!selectedMS}
             onBasicChange={handleBasicChange}
             onSpecChange={handleSpecChange}
             onAddItem={addItem}

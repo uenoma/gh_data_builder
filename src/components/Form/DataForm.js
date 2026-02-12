@@ -17,6 +17,7 @@ import './DataForm.css';
 
 const DataForm = ({
   data,
+  isNew,
   onBasicChange,
   onSpecChange,
   onAddItem,
@@ -27,6 +28,9 @@ const DataForm = ({
   return (
     <form className="data-form">
       <div className="form-section">
+        <h2 style={{ textAlign: 'center', color: isNew ? '#4CAF50' : '#2196F3', marginBottom: '20px' }}>
+          {isNew ? '新規作成モード' : '更新モード'}
+        </h2>
         <AuthorInfo data={data} onChange={onBasicChange} />
       </div>
       <div className="form-section">
