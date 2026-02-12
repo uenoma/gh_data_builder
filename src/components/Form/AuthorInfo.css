@@ -1,0 +1,49 @@
+.author-info-section {
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.author-info-table {
+  width: 500px;
+  border-collapse: collapse;
+  margin: 10px auto 0;
+}
+
+.author-info-table th,
+.author-info-table td {
+  border: 1px solid #444;
+  padding: 6px;
+  text-align: center;
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+  font-size: 12px;
+}
+
+.author-info-table thead th {
+  background-color: var(--form-accent-color);
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.author-info-table tbody th {
+  background-color: #333;
+  font-weight: bold;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+.author-info-table input {
+  width: 200px;
+  padding: 4px;
+  text-align: left;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.author-info-table input:focus {
+  outline: none;
+  border-color: var(--form-accent-color);
+  background-color: #2a2a2a;
+}

@@ -89,7 +89,12 @@ const labels = {
   grappleMethod: '格闘方法',
   hitRate: '命中率',
   weaponSpec: '武装',
-  weaponName: '武装'
+  weaponName: '武装',
+
+  // Author Info
+  authorInfo: '作成者情報',
+  author: '作成者',
+  editPassword: '編集パスワード'
 };
 
 export default labels;

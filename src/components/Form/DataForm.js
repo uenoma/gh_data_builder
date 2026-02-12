@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthorInfo from './AuthorInfo';
 import BasicInfo from './BasicInfo';
 import SpecForm from './SpecForm';
 import ThrustersForm from './ThrustersForm';
@@ -25,6 +26,9 @@ const DataForm = ({
 }) => {
   return (
     <form className="data-form">
+      <div className="form-section">
+        <AuthorInfo data={data} onChange={onBasicChange} />
+      </div>
       <div className="form-section">
         <div className="form-columns">
           <BasicInfo data={data} onChange={onBasicChange} />
@@ -59,7 +63,6 @@ const DataForm = ({
           onAdd={() => onAddItem('shooting_types')}
           onUpdate={(index, field, value) => onUpdateItem('shooting_types', index, field, value)}
           onRemove={(index) => onRemoveItem('shooting_types', index)}
-          className="shooting-weapon-spacing"
         />
         <WeaponSpecsForm
           items={data.ms_data.weapon_specs}
@@ -69,7 +72,7 @@ const DataForm = ({
         />
       </div>
       <div className="form-section">
-        <AvoidanceForm avoidance={data.ms_data.avoidance} onUpdate={onUpdate} className="avoidance-defence-spacing" />
+        <AvoidanceForm avoidance={data.ms_data.avoidance} onUpdate={onUpdate}/>
         <DefenceForm defence={data.ms_data.defence} onUpdate={onUpdate} />
       </div>
       <div className="form-section">

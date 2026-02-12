@@ -2,13 +2,13 @@ import React from 'react';
 import labels from '../../labels';
 import './ShootingTypesForm.css';
 
-const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove, className }) => {
+const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove }) => {
   const handleUpdate = (index, field, value) => {
     onUpdate(index, field, value);
   };
 
   return (
-    <div className={className}>
+    <div className="shooting-weapon-spacing">
       <h2>{labels.shootingTypes}</h2>
       <table className="data-table">
         <thead>

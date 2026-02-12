@@ -61,3 +61,8 @@
   justify-content: flex-start;
   gap: 8px;
 }
+
+.shooting-weapon-spacing {
+  margin-bottom: 20px;
+  overflow: auto;
+}

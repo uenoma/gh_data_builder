@@ -49,7 +49,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
   };
 
   return (
-    <div>
+    <div className="body-specs-spacing">
       {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
         <div key={part} className="body-specs-part">
           {/* <h3>{partLabels[part]}</h3> */}

@@ -8,7 +8,7 @@ const BasicInfo = ({ data, onChange }) => {
   };
 
   return (
-    <div>
+    <div className="basic-info-section">
       <h2>{labels.basicInfo}</h2>
       <table className="basic-info-table">
         <tbody>

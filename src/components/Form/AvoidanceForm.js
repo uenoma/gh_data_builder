@@ -1,7 +1,8 @@
 import React from "react";
 import labels from "../../labels";
+import './AvoidanceForm.css';
 
-const AvoidanceForm = ({ avoidance, onUpdate, className }) => {
+const AvoidanceForm = ({ avoidance, onUpdate }) => {
   const handleUpdate = (direction, index, value) => {
     const newValues = [...avoidance[direction].values];
     newValues[index] = value;
@@ -17,7 +18,7 @@ const AvoidanceForm = ({ avoidance, onUpdate, className }) => {
   const valueLabels = ["〜2", "〜4", "〜6", "〜7", "〜12", "13〜"];
 
   return (
-    <div className={className}>
+    <div className="avoidance-defence-spacing">
       <h2>{labels.avoidance}</h2>
       <table className="data-table">
         <thead>

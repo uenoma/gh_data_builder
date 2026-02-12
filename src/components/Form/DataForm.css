@@ -2,12 +2,5 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-}
-
-.avoidance-defence-spacing {
-  margin-bottom: 20px;
-}
-
-.shooting-weapon-spacing {
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 }

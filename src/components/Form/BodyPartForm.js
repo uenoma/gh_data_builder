@@ -1,5 +1,6 @@
 import React from 'react';
 import labels from '../../labels';
+import './BodyPartForm.css';
 
 const BodyPartForm = ({ bodyPart, onUpdate }) => {
   const handleUpdate = (direction, index, value) => {
@@ -18,7 +19,7 @@ const BodyPartForm = ({ bodyPart, onUpdate }) => {
   const positionLabels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
   return (
-    <div>
+    <div className="body-part-spacing">
       <h3>{labels.bodyPart}</h3>
       <table className="data-table">
         <thead>
