@@ -5,7 +5,7 @@ const BodySpecsViewer = ({ bodySpecs }) => {
   return (
     <div className="viewer-section">
       <div className="viewer-row">
-        {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
+        {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack', 'base'].map(part => (
           bodySpecs[part] && bodySpecs[part].length > 0 ? (
             <BodySpecPartViewer key={part} part={part} items={bodySpecs[part]} />
           ) : null

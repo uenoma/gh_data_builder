@@ -56,7 +56,7 @@ const BodySpecPartViewer = ({ part, items }) => {
           <tr>
             <td>{labels.hp}</td>
             {items && items.map((item, index) => (
-              <td key={index}>{(part === 'head' || part === 'body') && item.body ? `(${item.hp})` : item.hp !== null ? item.hp : '-'}</td>
+              <td key={index}>{(part === 'head' || part === 'body' || part === 'base') && item.body ? `(${item.hp})` : item.hp !== null ? item.hp : '-'}</td>
             ))}
           </tr>
         </tbody>

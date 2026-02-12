@@ -53,6 +53,7 @@ const labels = {
   body: '胴体',
   arm: '腕',
   backpack: 'BP',
+  base: '車体',
   item: '項目',
 
   // Common

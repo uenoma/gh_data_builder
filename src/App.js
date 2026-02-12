@@ -73,7 +73,8 @@ function App() {
         leg: [],
         body: [],
         arm: [],
-        backpack: []
+        backpack: [],
+        base:[],
       }
     }
   });
@@ -90,7 +91,7 @@ function App() {
       ...prev,
       ms_data: {
         ...prev.ms_data,
-        spec: { ...prev.ms_data.spec, [key]: value }
+        spec: { ...(prev.ms_data.spec || {}), [key]: value }
       }
     }));
   };
@@ -100,7 +101,7 @@ function App() {
       ...prev,
       ms_data: {
         ...prev.ms_data,
-        [arrayName]: [...prev.ms_data[arrayName], {}]
+        [arrayName]: [...(prev.ms_data[arrayName] || []), {}]
       }
     }));
   };
@@ -110,7 +111,7 @@ function App() {
       ...prev,
       ms_data: {
         ...prev.ms_data,
-        [arrayName]: prev.ms_data[arrayName].map((item, i) =>
+        [arrayName]: (prev.ms_data[arrayName] || []).map((item, i) =>
           i === index ? { ...item, [field]: value } : item
         )
       }
@@ -122,7 +123,7 @@ function App() {
       ...prev,
       ms_data: {
         ...prev.ms_data,
-        [arrayName]: prev.ms_data[arrayName].filter((_, i) => i !== index)
+        [arrayName]: (prev.ms_data[arrayName] || []).filter((_, i) => i !== index)
       }
     }));
   };
@@ -133,8 +134,8 @@ function App() {
       ms_data: {
         ...prev.ms_data,
         [section]: {
-          ...prev.ms_data[section],
-          [key]: subKey ? { ...prev.ms_data[section][key], [subKey]: value } : value
+          ...(prev.ms_data[section] || {}),
+          [key]: subKey ? { ...(prev.ms_data[section]?.[key] || {}), [subKey]: value } : value
         }
       }
     }));
@@ -263,7 +264,8 @@ function App() {
             leg: [],
             body: [],
             arm: [],
-            backpack: []
+            backpack: [],
+            base: []
           }
         }
       });

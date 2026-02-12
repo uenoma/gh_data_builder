@@ -6,13 +6,11 @@ import ThrustersForm from './ThrustersForm';
 import ReceiveTypesForm from './ReceiveTypesForm';
 import GrappleTypesForm from './GrappleTypesForm';
 import WeaponSpecsForm from './WeaponSpecsForm';
-import ArrayForm from './ArrayForm';
 import ShootingTypesForm from './ShootingTypesForm';
 import AvoidanceForm from './AvoidanceForm';
 import DefenceForm from './DefenceForm';
 import BodyPartForm from './BodyPartForm';
 import BodySpecsForm from './BodySpecsForm';
-import labels from '../../labels';
 import './DataForm.css';
 
 const DataForm = ({
@@ -25,6 +23,10 @@ const DataForm = ({
   onRemoveItem,
   onUpdate
 }) => {
+  if (!data || !data.ms_data) {
+    return <div>データが読み込まれていません。</div>;
+  }
+
   return (
     <form className="data-form">
       <div className="form-section">

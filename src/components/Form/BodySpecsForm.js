@@ -4,7 +4,7 @@ import './BodySpecsForm.css';
 
 const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
   const handleUpdate = (part, index, field, valueIndex, value) => {
-    const newItems = [...bodySpecs[part]];
+    const newItems = [...(bodySpecs[part] || [])];
     if (field === 'values') {
       const newValues = [...(newItems[index].values || [null, null, null, null])];
       newValues[valueIndex] = value === '' ? null : Number(value);
@@ -31,12 +31,12 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
     if (part === 'body') {
       newItem.body = false;
     }
-    const newItems = [...bodySpecs[part], newItem];
+    const newItems = [...(bodySpecs[part] || []), newItem];
     onUpdate('body_specs', part, null, newItems);
   };
 
   const removeItem = (part, index) => {
-    const newItems = bodySpecs[part].filter((_, i) => i !== index);
+    const newItems = (bodySpecs[part] || []).filter((_, i) => i !== index);
     onUpdate('body_specs', part, null, newItems);
   };
 
@@ -45,12 +45,13 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
     leg: labels.leg,
     body: labels.body,
     arm: labels.arm,
-    backpack: labels.backpack
+    backpack: labels.backpack,
+    base: labels.base,
   };
 
   return (
     <div className="body-specs-spacing">
-      {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack'].map(part => (
+      {bodySpecs && ['head', 'leg', 'body', 'arm', 'backpack', 'base'].map(part => (
         <div key={part} className="body-specs-part">
           {/* <h3>{partLabels[part]}</h3> */}
           <table className="body-specs-table">
@@ -173,7 +174,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                 ))}
               </tr>
               <tr>
-                <td>{labels.hp}{(part === 'head' || part === 'body') ? ` / ${labels.bodyFlag}` : ''}</td>
+                <td>{labels.hp}{(part === 'head' || part === 'body' || part === 'base') ? ` / ${labels.bodyFlag}` : ''}</td>
                 {bodySpecs[part] && bodySpecs[part].map((item, index) => (
                   <td key={index}>
                     <div className="body-specs-combined-cell">
@@ -184,7 +185,7 @@ const BodySpecsForm = ({ bodySpecs, onUpdate }) => {
                         className="body-specs-hp-input"
                         placeholder="HP"
                       />
-                      {(part === 'head' || part === 'body') && (
+                      {(part === 'head' || part === 'body' || part === 'base') && (
                         <input 
                           type="checkbox" 
                           checked={item.body || false} 
