@@ -17,6 +17,8 @@ function App() {
     ms_name: '',
     ms_name_optional: '',
     ms_icon: '',
+    author: '',
+    editPassword: '',
     ms_data: {
       spec: {
         sensor_rank: '',
@@ -122,6 +124,7 @@ function App() {
   const downloadJSON = () => {
     const processedData = {
       ...data,
+      editPassword: undefined, // パスワードはエクスポートしない
       ms_data: {
         ...data.ms_data,
         shooting_types: data.ms_data.shooting_types.map(item => ({
@@ -189,6 +192,8 @@ function App() {
         ms_name: '',
         ms_name_optional: '',
         ms_icon: '',
+        author: '',
+        editPassword: '',
         ms_data: {
           spec: {
             sensor_rank: '',
