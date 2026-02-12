@@ -4,8 +4,24 @@ import DataForm from './components/Form/DataForm';
 import DataViewer from './components/Viewer/DataViewer';
 import MSDataList from './components/Database/MSDataList';
 import labels from './labels';
+import { updateDatabase } from './api';
 
 function App() {
+  // クッキーから値を読み込む関数
+  const getCookieValue = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return '';
+  };
+
+  // クッキーに値を保存する関数
+  const setCookie = (name, value, days = 30) => {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  };
+
   const [view, setView] = useState('database');
   const [selectedMS, setSelectedMS] = useState(null);
   const [sortKey, setSortKey] = useState('ms_number');
@@ -17,8 +33,8 @@ function App() {
     ms_name: '',
     ms_name_optional: '',
     ms_icon: '',
-    author: '',
-    editPassword: '',
+    creator_name: '',
+    edit_password: '',
     ms_data: {
       spec: {
         sensor_rank: '',
@@ -64,6 +80,9 @@ function App() {
 
   const handleBasicChange = (key, value) => {
     setData(prev => ({ ...prev, [key]: value }));
+    if (key === 'creator_name' || key === 'edit_password') {
+      setCookie(key, value);
+    }
   };
 
   const handleSpecChange = (key, value) => {
@@ -124,7 +143,7 @@ function App() {
   const downloadJSON = () => {
     const processedData = {
       ...data,
-      editPassword: undefined, // パスワードはエクスポートしない
+      edit_password: undefined, // パスワードはエクスポートしない
       ms_data: {
         ...data.ms_data,
         shooting_types: data.ms_data.shooting_types.map(item => ({
@@ -159,6 +178,17 @@ function App() {
     }
   };
 
+  // 編集タブを開いたときにクッキーから作成者情報を読み込む
+  useEffect(() => {
+    if (view === 'edit' && !data.creator_name && !data.edit_password) {
+      setData(prev => ({
+        ...prev,
+        creator_name: getCookieValue('creator_name'),
+        edit_password: getCookieValue('edit_password')
+      }));
+    }
+  }, [view]);
+
   const renderContent = () => {
     switch (view) {
       case 'database':
@@ -192,8 +222,8 @@ function App() {
         ms_name: '',
         ms_name_optional: '',
         ms_icon: '',
-        author: '',
-        editPassword: '',
+        creator_name: getCookieValue('creator_name'),
+        edit_password: getCookieValue('edit_password'),
         ms_data: {
           spec: {
             sensor_rank: '',
@@ -239,32 +269,17 @@ function App() {
       setSelectedMS(null);
     };
 
-    const updateDatabase = async () => {
-      if (!data.data_id.trim() || !data.ms_name.trim()) {
-        alert('データID、名称は必須です。');
-        return;
-      }
+    const handleUpdateDatabase = async () => {
       try {
         const isNew = !selectedMS;
-        const method = isNew ? 'POST' : 'PUT';
-        const url = isNew ? 'https://dndhideout.com/gh/gh_backend/public/api/mobile-suits' : `https://dndhideout.com/gh/gh_backend/public/api/mobile-suits/${data.id}`;
-        const response = await fetch(url, {
-          method: method,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-        if (!response.ok) {
-          throw new Error('Failed to update database');
-        }
+        await updateDatabase(data, isNew, data.id);
         alert(isNew ? '新規作成しました。' : '更新しました。');
         if (isNew) {
           setRefreshTrigger(prev => prev + 1);
           setView('database');
         }
       } catch (error) {
-        alert('データベース操作に失敗しました: ' + error.message);
+        alert('エラーが発生しました: ' + error.message);
       }
     };
 
@@ -288,7 +303,7 @@ function App() {
           <button onClick={downloadJSON} className="download-button print-hidden">
             エクスポート（JSON）
           </button>
-          <button onClick={updateDatabase} className="update-button print-hidden">
+          <button onClick={handleUpdateDatabase} className="update-button print-hidden">
             データベースに保存
           </button>
         </div>

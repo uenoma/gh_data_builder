@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MSDataList.css';
+import { fetchMobileSuits } from '../../api';
 
 const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setSortKey, sortOrder, setSortOrder, refreshTrigger }) => {
   const [mobileSuits, setMobileSuits] = useState([]);
@@ -33,13 +34,9 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
   );
 
   useEffect(() => {
-    const fetchMobileSuits = async () => {
+    const loadMobileSuits = async () => {
       try {
-        const response = await fetch('https://dndhideout.com/gh/gh_backend/public/api/mobile-suits');
-        if (!response.ok) {
-          throw new Error('Failed to fetch mobile suits');
-        }
-        const data = await response.json();
+        const data = await fetchMobileSuits();
         setMobileSuits(data);
       } catch (err) {
         setError(err.message);
@@ -48,7 +45,7 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
       }
     };
 
-    fetchMobileSuits();
+    loadMobileSuits();
   }, [refreshTrigger]);
 
   if (loading) {
@@ -78,6 +75,7 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
               <th onClick={() => handleSort('ms_name_optional')} style={{ cursor: 'pointer' }}>オプション {sortKey === 'ms_name_optional' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>              
               <th onClick={() => handleSort('data_id')} style={{ cursor: 'pointer' }}>識別子 {sortKey === 'data_id' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>              
               <th>イメージ</th>
+              <th onClick={() => handleSort('creator_name')} style={{ cursor: 'pointer' }}>作成者 {sortKey === 'creator_name' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}</th>
             </tr>
           </thead>
           <tbody>
@@ -94,6 +92,7 @@ const MsDataList = ({ setData, setView, selectedMS, setSelectedMS, sortKey, setS
                     '-'
                   )}
                 </td>
+                <td>{ms.creator?.creator_name || '-'}</td>
               </tr>
             ))}
           </tbody>

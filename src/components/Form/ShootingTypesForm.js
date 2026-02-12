@@ -13,7 +13,7 @@ const ShootingTypesForm = ({ shootingTypes, onAdd, onUpdate, onRemove }) => {
       <table className="data-table">
         <thead>
           <tr>
-            <th colspan="2">{labels.name}</th>
+            <th colSpan="2">{labels.name}</th>
             <th>1</th>
             <th>2</th>
             <th>3</th>
