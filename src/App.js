@@ -318,11 +318,11 @@ function App() {
         <button className={`tab-button ${view === 'database' ? 'active' : ''}`} onClick={() => setView('database')}>
           {labels.database}
         </button>
-        <button className={`tab-button ${view === 'edit' ? 'active' : ''}`} onClick={() => setView('edit')}>
-          {labels.dataEdit}
-        </button>
         <button className={`tab-button ${view === 'viewer' ? 'active' : ''}`} onClick={() => setView('viewer')}>
           {labels.dataViewer}
+        </button>
+        <button className={`tab-button ${view === 'edit' ? 'active' : ''}`} onClick={() => setView('edit')}>
+          {labels.dataEdit}
         </button>
       </div>
       <hr className="tab-separator print-hidden" />
